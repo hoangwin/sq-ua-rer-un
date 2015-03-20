@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: efa33b44a0410a04bbfe9f6bd86e637f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TitleMap_0
+    21300002: TitleMap_1
+    21300004: TitleMap_2
+    21300006: TitleMap_3
+    21300008: TitleMap_4
+    21300010: TitleMap_5
+    21300012: TitleMap_6
+    21300014: TitleMap_7
+    21300016: TitleMap_8
+    21300018: TitleMap_9
+    21300020: TitleMap_10
+    21300022: TitleMap_11
+    21300024: TitleMap_12
+    21300026: TitleMap_13
+    21300028: TitleMap_14
+    21300030: TitleMap_15
+    21300032: TitleMap_16
+    21300034: TitleMap_17
+    21300036: TitleMap_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: TitleMap_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 879
+        width: 128
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 881
+        width: 254
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 881
+        width: 380
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 881
+        width: 506
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 882
+        width: 632
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_5
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 881
+        width: 760
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_6
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 755
+        width: 254
+        height: 254
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 755
+        width: 380
+        height: 254
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 756
+        width: 506
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_9
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 755
+        width: 632
+        height: 254
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_10
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 756
+        width: 760
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_11
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 627
+        width: 380
+        height: 382
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_12
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 627
+        width: 507
+        height: 382
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 429
+        width: 130
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 433
+        width: 253
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_15
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 433
+        width: 380
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_16
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 433
+        width: 506
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_17
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 433
+        width: 631
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TitleMap_18
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 433
+        width: 758
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
