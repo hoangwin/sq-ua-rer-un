@@ -13,7 +13,7 @@ public class PlatformBottom : MonoBehaviour
     public static int color;
 	void Start () {
 
-        size = bg1.collider2D.bounds.size.x;
+        size = bg1.GetComponent<Collider2D>().bounds.size.x;
 	}
 	
 	// Update is called once per frame

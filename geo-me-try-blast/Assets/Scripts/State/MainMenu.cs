@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour {
         if (timeShowAds > 90 || !firstShowAdsAtBegin)
         {
 
-            ShowADS();
+            //ShowADS();
 
         }
         MainMenu.instance.setMusic(SoundEngine.isSoundMusic);        
