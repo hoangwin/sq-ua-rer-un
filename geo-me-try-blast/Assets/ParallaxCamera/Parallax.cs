@@ -31,7 +31,7 @@ public class Parallax : MonoBehaviour
             if (offset < -1)
                 offset += 1;
 
-            renderer.material.mainTextureOffset = new Vector2(offset, 0);
+            GetComponent<Renderer>().material.mainTextureOffset = new Vector2(offset, 0);
         }
         
 

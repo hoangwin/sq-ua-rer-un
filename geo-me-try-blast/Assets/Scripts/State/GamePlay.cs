@@ -39,7 +39,7 @@ public class GamePlay : MonoBehaviour {
     void Awake()
     {
         
-        Application.targetFrameRate = -1;
+        Application.targetFrameRate = 60;
 
         MouseController.instance.MusicSound = gameObject.GetComponent<AudioSource>();
          AudioClip clip = null;

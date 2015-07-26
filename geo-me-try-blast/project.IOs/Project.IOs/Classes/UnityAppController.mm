@@ -6,7 +6,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import <QuartzCore/CADisplayLink.h>
-#import <UIKit/UIKit.h>
 #import <Availability.h>
 
 #import <OpenGLES/EAGL.h>
@@ -22,11 +21,10 @@
 // DisplayLink is the only run loop mode now - all others were removed
 
 #include "CrashReporter.h"
-#include "iPhone_OrientationSupport.h"
-#include "iPhone_Profiler.h"
 
-#include "UI/Keyboard.h"
+#include "UI/OrientationSupport.h"
 #include "UI/UnityView.h"
+#include "UI/Keyboard.h"
 #include "UI/SplashScreen.h"
 #include "Unity/InternalProfiler.h"
 #include "Unity/DisplayManager.h"

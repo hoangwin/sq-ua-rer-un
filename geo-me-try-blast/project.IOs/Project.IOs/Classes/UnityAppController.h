@@ -1,8 +1,5 @@
-#ifndef _TRAMPOLINE_UNITYAPPCONTROLLER_H_
-#define _TRAMPOLINE_UNITYAPPCONTROLLER_H_
+#pragma once
 
-
-#import <UIKit/UIKit.h>
 #import <QuartzCore/CADisplayLink.h>
 
 #include "PluginBase/RenderPluginDelegate.h"
