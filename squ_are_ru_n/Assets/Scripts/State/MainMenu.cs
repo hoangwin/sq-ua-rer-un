@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour {
         if (timeShowAds > 90 || !firstShowAdsAtBegin)
         {
 
-            ShowADS();
+          //  ShowADS();
 
         }
         MainMenu.instance.setMusic(SoundEngine.isSoundMusic);        
@@ -70,6 +70,7 @@ public class MainMenu : MonoBehaviour {
     }
     public void setMusic(bool isMusic)
     {
+        Debug.Log("aaa");
         SoundEngine.isSoundMusic = isMusic;
         MouseController.instance.AdjustSound(SoundEngine.isSoundMusic);
         if (SoundEngine.isSoundMusic)

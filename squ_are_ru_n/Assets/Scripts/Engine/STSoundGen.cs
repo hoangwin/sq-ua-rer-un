@@ -458,7 +458,7 @@ public class STSoundGen : MonoBehaviour
         {
             string path = AssetDatabase.GetAssetPath(audioclip);
             AudioImporter audioImporter = AssetImporter.GetAtPath(path) as AudioImporter;
-            audioImporter.compressionBitrate = (int)newCompressionBitrate;
+            //audioImporter.compressionBitrate = (int)newCompressionBitrate;
             AssetDatabase.ImportAsset(path);
         }
     }
