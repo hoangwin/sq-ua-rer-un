@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: d79628d5521503a47a0206bc7d6dd6a5
-timeCreated: 1439137015
+timeCreated: 1439363625
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: GUI_0
     21300002: GUI_1
+    21300004: GUI_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -72,6 +73,16 @@ TextureImporter:
         y: 600
         width: 798
         height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GUI_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 123
+        width: 670
+        height: 348
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

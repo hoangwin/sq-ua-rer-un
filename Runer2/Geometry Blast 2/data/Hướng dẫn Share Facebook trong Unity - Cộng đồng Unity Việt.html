@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://unityviet.com/huong-dan-share-facebook-trong-unity/ -->
+<html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" prefix="og: http://ogp.me/ns#" class="slb slb_overlay"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://unityviet.com/xmlrpc.php">
+<title>Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v2.3.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt">
+<meta property="og:description" content="Share Facebook trong game là một tính năng social rất hữu hiệu trong việc quảng bá game. Trong bài này mình">
+<meta property="og:url" content="http://unityviet.com/huong-dan-share-facebook-trong-unity/">
+<meta property="og:site_name" content="Cộng đồng Unity Việt">
+<meta property="article:section" content="Khác">
+<meta property="article:published_time" content="2014-09-17T22:29:20+00:00">
+<meta property="article:modified_time" content="2014-10-03T09:30:00+00:00">
+<meta property="og:updated_time" content="2014-10-03T09:30:00+00:00">
+<meta property="og:image" content="http://unityviet.com/wp-content/uploads/2014/09/unity-facebook1.jpg">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Cộng đồng Unity Việt » Feed" href="http://unityviet.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Cộng đồng Unity Việt » Comments Feed" href="http://unityviet.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Cộng đồng Unity Việt » Hướng dẫn Share Facebook trong Unity Comments Feed" href="http://unityviet.com/huong-dan-share-facebook-trong-unity/feed/">
+		<script id="facebook-jssdk" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/sdk.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/unityviet.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/wp-emoji-release.min.js" type="text/javascript"></script><style type="text/css"></style>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="crayon-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="colormag_google_fonts-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="colormag_style-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="colormag-fontawesome-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="slb_core-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/app.css" type="text/css" media="all">
+<link rel="stylesheet" id="wppb_stylesheet-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/style-front-end.css" type="text/css" media="all">
+<link rel="stylesheet" id="sabai-css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/main.css" type="text/css" media="all">
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/jquery.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.7.1","is_admin":"0","ajaxurl":"http:\/\/unityviet.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/crayon.min.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/colormag-custom.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/sabai.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://unityviet.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://unityviet.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.2.4">
+<link rel="shortlink" href="http://unityviet.com/?p=325">
+<meta property="fb:app_id" content="355966917902409"><meta property="fb:admins" content="100002742966688"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="stylesheet" type="text/css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/style(1).css"><link rel="stylesheet" type="text/css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/css(1)"><link rel="stylesheet" type="text/css" href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/style(2).css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="single single-post postid-325 single-format-standard  wide">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header clearfix">
+		<div id="header-text-nav-container" class="clearfix">
+                     <div class="news-bar">
+               <div class="inner-wrap clearfix">
+                  
+                  
+                  	<div class="social-links clearfix">
+		<ul>
+		<li><a href="https://www.facebook.com/STGameVN" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://plus.google.com/106002565159548684327/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.youtube.com/channel/UC7yFuH5HBlDbU0VD2vywVAg" target="_blank"><i class="fa fa-youtube"></i></a></li>		</ul>
+	</div><!-- .social-links -->
+	               </div>
+            </div>
+         
+			
+			<div class="inner-wrap">
+
+				<div id="header-text-nav-wrap" class="clearfix">
+					<div id="header-left-section">
+												<div id="header-text">
+							<h1 id="site-title">
+								<a href="http://unityviet.com/" title="Cộng đồng Unity Việt" rel="home">Cộng đồng Unity Việt</a>
+							</h1>
+							<h2 id="site-description">Easy game, easy life</h2><!-- #site-description -->
+						</div><!-- #header-text -->
+											</div><!-- #header-left-section -->
+					<div id="header-right-section">
+									    	</div><!-- #header-right-section -->
+
+			   </div><!-- #header-text-nav-wrap -->
+
+			</div><!-- .inner-wrap -->
+
+			
+			<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
+				<div class="inner-wrap clearfix">
+					               <h4 class="menu-toggle"></h4>
+               <div class="menu-primary-container"><ul id="menu-main-menu" class="menunav-menu"><li id="menu-item-859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-859"><a href="http://unityviet.com/trang-chu/">Trang chủ</a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="http://unityviet.com/hoi-dap/">Hỏi &amp; Đáp</a></li>
+</ul></div>                              				</div>
+			</nav>
+
+		</div><!-- #header-text-nav-container -->
+
+		
+	</header>
+			<div id="main" class="clearfix">
+		<div class="inner-wrap clearfix">
+	
+	<div id="primary">
+		<div id="content" class="clearfix">
+
+			
+				
+<article id="post-325" class="post-325 post type-post status-publish format-standard has-post-thumbnail hentry category-khac">
+	
+   
+         <div class="featured-image">
+               <img width="770" height="380" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/unity-facebook1.jpg" class="attachment-colormag-featured-image wp-post-image" alt="unity-facebook1">            </div>
+   
+   <div class="article-content clearfix">
+
+   
+   <div class="above-entry-meta"><span class="cat-links"><a href="http://unityviet.com/category/khac/" rel="category tag">Khác</a>&nbsp;</span></div>
+      <header class="entry-header">
+   		<h1 class="entry-title">
+   			Hướng dẫn Share Facebook trong Unity   		</h1>
+   	</header>
+
+   	<div class="below-entry-meta">
+      <span class="posted-on"><a href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt.html" title="10:29 pm" rel="bookmark"><i class="fa fa-calendar-o"></i> <time class="entry-date published" datetime="2014-09-17T22:29:20+00:00">17 September, 2014</time><time class="updated" datetime="2014-10-03T09:30:00+00:00">3 October, 2014</time></a></span>
+      <span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="http://unityviet.com/author/toanta/" title="Trương Toàn">Trương Toàn</a></span></span>
+
+               <span class="comments"><a href="http://unityviet.com/huong-dan-share-facebook-trong-unity/#comments"><i class="fa fa-comment"></i> 1 Comment</a></span>
+      </div>
+   	<div class="entry-content clearfix">
+   		<p>Share Facebook trong game là một tính năng social rất hữu hiệu&nbsp;trong việc quảng bá game. Trong bài này mình sẽ hướng dẫn các bạn cách share Facebook trong Unity sử dụng Facebook SDK.</p>
+<p>Bước 1: Trước tiên bạn cần có Facebook SDK cho unity – Download <a title="Facebook SDK" href="https://www.facebook.com/campaign/landing.php?campaign_id=282184128580929&placement=SDK_list&url=https://developers.facebook.com/docs/unity/downloads/">tại đây</a>.</p>
+<p>Bước 2: Tạo một App trên Facebook. Tạo App với <a title="Create a New App" href="https://developers.facebook.com/?advanced_app_create=true">link này</a>. Sau đó ta có App ID của App vừa tạo. Với Android bạn phải tạo thêm Keyhash từ keystore để thêm thông tin cho App Trên Facebook.</p>
+<p><a href="http://unityviet.com/wp-content/uploads/2014/09/851582_383899431712568_1260304077_n.png" data-slb-group="325" data-slb-active="1" data-slb-internal="0"><img class="alignnone  wp-image-331" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851582_383899431712568_1260304077_n-315x166.png" alt="851582_383899431712568_1260304077_n" width="518" height="273"></a></p>
+<p><a href="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851547_634838539880675_1864677686_n.png" data-slb-group="325" data-slb-active="1" data-slb-internal="0"><img class="alignnone  wp-image-329" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851547_634838539880675_1864677686_n-315x85.png" alt="851547_634838539880675_1864677686_n" width="521" height="139"></a></p>
+<p>&nbsp;</p>
+<p>Bước 3: Import Facebook SDK vào Unity sau đó chọn Facebook -&gt; Edit Setting và điền App ID và App Name. Đối với Android bạn sẽ cần điền thêm mục PackageName và ClassName.</p>
+<p><a href="http://unityviet.com/wp-content/uploads/2014/09/851560_536028096465614_339374885_n.png" data-slb-group="325" data-slb-active="1" data-slb-internal="0"><img class="alignnone  wp-image-330" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851560_536028096465614_339374885_n-315x282.png" alt="851560_536028096465614_339374885_n" width="522" height="466"></a></p>
+<p><img class="alignnone  wp-image-328" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851555_529121217180895_125611043_n-315x182.png" alt="851555_529121217180895_125611043_n" width="518" height="299"></p>
+<p>Bước 4: Đến đây mọi công việc chuẩn bị đã hoàn tất, việc còn lại là “Code” để post lên Facebook nữa thôi:)</p>
+<p>– Đầu tiên nhất bạn cần phải khởi tạo Facebook SKD:</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55cc00e9b73b3921669146" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">FB.Init (initFBDelegate, HideUnityDele, null);</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55cc00e9b73b3921669146-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55cc00e9b73b3921669146-1"><span class="crayon-v">FB</span><span class="crayon-sy">.</span><span class="crayon-e">Init</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">initFBDelegate</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">HideUnityDele</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">null</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>
+Với các hàm :</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55cc00e9b73ba207943271" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">public void initFBDelegate(){
+//code xử lí việc sau khi init thành công 
+}
+
+public void HideUnityDele(bool isUnityHide){
+		if (!isUnityHide) {
+			Time.timeScale = 0;   
+		} else {
+			Time.timeScale = 1;   
+		}
+          // dùng để pause game khi đang cần đăng nhập
+	}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-2">2</div><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-4">4</div><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-6">6</div><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-8">8</div><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-10">10</div><div class="crayon-num" data-line="crayon-55cc00e9b73ba207943271-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73ba207943271-12">12</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-1"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">initFBDelegate</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-2"><span class="crayon-c">//code xử lí việc sau khi init thành công </span></div><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-3"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-4">&nbsp;</div><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-5"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">HideUnityDele</span><span class="crayon-sy">(</span><span class="crayon-t">bool</span><span class="crayon-h"> </span><span class="crayon-v">isUnityHide</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-6"><span class="crayon-h">		</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-v">isUnityHide</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-7"><span class="crayon-h">			</span><span class="crayon-v">Time</span><span class="crayon-sy">.</span><span class="crayon-v">timeScale</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-8"><span class="crayon-h">		</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-9"><span class="crayon-h">			</span><span class="crayon-v">Time</span><span class="crayon-sy">.</span><span class="crayon-v">timeScale</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-10"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-55cc00e9b73ba207943271-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// dùng để pause game khi đang cần đăng nhập</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73ba207943271-12"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>
+– Sau đó khi cần Login để post dữ liệu:</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55cc00e9b73bd465713839" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">if (!FB.IsLoggedIn) {
+	FB.Login("email,publish_actions", callBackLogin); 
+        //xin quyền xem thông tin email, quyền public - callBackLogin là callback           gọi sau khi login(có thể là thành công hoặc không thành công để xử lý)
+}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55cc00e9b73bd465713839-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bd465713839-2">2</div><div class="crayon-num" data-line="crayon-55cc00e9b73bd465713839-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bd465713839-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55cc00e9b73bd465713839-1"><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-v">FB</span><span class="crayon-sy">.</span><span class="crayon-v">IsLoggedIn</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bd465713839-2"><span class="crayon-h">	</span><span class="crayon-v">FB</span><span class="crayon-sy">.</span><span class="crayon-e">Login</span><span class="crayon-sy">(</span><span class="crayon-s">"email,publish_actions"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">callBackLogin</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-55cc00e9b73bd465713839-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//xin quyền xem thông tin email, quyền public - callBackLogin là callback&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gọi sau khi login(có thể là thành công hoặc không thành công để xử lý)</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bd465713839-4"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>
+Ví dụ hàm callBackLogin của mình:</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55cc00e9b73bf387958705" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">public void callBackLogin(FBResult result){
+		if (FB.IsLoggedIn) {
+			StartCoroutine(TakeScreenshot1());
+                        //nếu login thành công gọi hàm TakeScreenshot để chụp màn                           hình dùng cho việc post facebook share ảnh
+		}
+
+		Debug.Log ("Loging call back "+result.Text);
+	}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55cc00e9b73bf387958705-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bf387958705-2">2</div><div class="crayon-num" data-line="crayon-55cc00e9b73bf387958705-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bf387958705-4">4</div><div class="crayon-num" data-line="crayon-55cc00e9b73bf387958705-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bf387958705-6">6</div><div class="crayon-num" data-line="crayon-55cc00e9b73bf387958705-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73bf387958705-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55cc00e9b73bf387958705-1"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">callBackLogin</span><span class="crayon-sy">(</span><span class="crayon-e">FBResult </span><span class="crayon-v">result</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bf387958705-2"><span class="crayon-h">		</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">FB</span><span class="crayon-sy">.</span><span class="crayon-v">IsLoggedIn</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-55cc00e9b73bf387958705-3"><span class="crayon-h">			</span><span class="crayon-e">StartCoroutine</span><span class="crayon-sy">(</span><span class="crayon-e">TakeScreenshot1</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bf387958705-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//nếu login thành công gọi hàm TakeScreenshot để chụp màn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hình dùng cho việc post facebook share ảnh</span></div><div class="crayon-line" id="crayon-55cc00e9b73bf387958705-5"><span class="crayon-h">		</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bf387958705-6">&nbsp;</div><div class="crayon-line" id="crayon-55cc00e9b73bf387958705-7"><span class="crayon-h">		</span><span class="crayon-v">Debug</span><span class="crayon-sy">.</span><span class="crayon-e">Log</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-s">"Loging call back "</span><span class="crayon-o">+</span><span class="crayon-v">result</span><span class="crayon-sy">.</span><span class="crayon-v">Text</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73bf387958705-8"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>
+– Giờ là ví dụ sử dụng Facebook SDK để post ảnh lên facebook của người dùng:</p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55cc00e9b73c1833935528" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">private IEnumerator TakeScreenshot1()
+	{
+		yield return new WaitForEndOfFrame();
+		Texture2D snap = new Texture2D(Screen.width, Screen.height,
+                TextureFormat.RGB24, false);
+		screenShotTexture.mainTexture = snap;
+                 //Texture hiển thị hình vừa chụp cho người dùng
+		snap.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+		snap.Apply();
+		byte[] scren = snap.EncodeToPNG();
+                //lấy chuỗi byte của hình để post lên facebook
+		
+		var wwwForm = new WWWForm();
+		wwwForm.AddBinaryData("image", screenshot, "barcrawling.png");
+		
+		
+		wwwForm.AddField("name",message);
+		FB.API("me/photos", HttpMethod.POST, callBackPostPhoto, wwwForm);//post
+	}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-2">2</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-4">4</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-6">6</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-8">8</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-10">10</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-12">12</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-14">14</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-16">16</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-55cc00e9b73c1833935528-18">18</div><div class="crayon-num" data-line="crayon-55cc00e9b73c1833935528-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-1"><span class="crayon-m">private</span><span class="crayon-h"> </span><span class="crayon-e">IEnumerator </span><span class="crayon-e">TakeScreenshot1</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-2"><span class="crayon-h">	</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-3"><span class="crayon-h">		</span><span class="crayon-e">yield </span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">WaitForEndOfFrame</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-4"><span class="crayon-h">		</span><span class="crayon-e">Texture2D </span><span class="crayon-v">snap</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">Texture2D</span><span class="crayon-sy">(</span><span class="crayon-v">Screen</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Screen</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">TextureFormat</span><span class="crayon-sy">.</span><span class="crayon-v">RGB24</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-6"><span class="crayon-h">		</span><span class="crayon-v">screenShotTexture</span><span class="crayon-sy">.</span><span class="crayon-v">mainTexture</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snap</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//Texture hiển thị hình vừa chụp cho người dùng</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-8"><span class="crayon-h">		</span><span class="crayon-v">snap</span><span class="crayon-sy">.</span><span class="crayon-e">ReadPixels</span><span class="crayon-sy">(</span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">Rect</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Screen</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Screen</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-9"><span class="crayon-h">		</span><span class="crayon-v">snap</span><span class="crayon-sy">.</span><span class="crayon-e">Apply</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-10"><span class="crayon-h">		</span><span class="crayon-t">byte</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-v">scren</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">snap</span><span class="crayon-sy">.</span><span class="crayon-e">EncodeToPNG</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//lấy chuỗi byte của hình để post lên facebook</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-12"><span class="crayon-h">		</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-13"><span class="crayon-h">		</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">wwwForm</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">WWWForm</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-14"><span class="crayon-h">		</span><span class="crayon-v">wwwForm</span><span class="crayon-sy">.</span><span class="crayon-e">AddBinaryData</span><span class="crayon-sy">(</span><span class="crayon-s">"image"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">screenshot</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"barcrawling.png"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-15"><span class="crayon-h">		</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-16"><span class="crayon-h">		</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-17"><span class="crayon-h">		</span><span class="crayon-v">wwwForm</span><span class="crayon-sy">.</span><span class="crayon-e">AddField</span><span class="crayon-sy">(</span><span class="crayon-s">"name"</span><span class="crayon-sy">,</span><span class="crayon-v">message</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-55cc00e9b73c1833935528-18"><span class="crayon-h">		</span><span class="crayon-v">FB</span><span class="crayon-sy">.</span><span class="crayon-e">API</span><span class="crayon-sy">(</span><span class="crayon-s">"me/photos"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">HttpMethod</span><span class="crayon-sy">.</span><span class="crayon-v">POST</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">callBackPostPhoto</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">wwwForm</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-c">//post</span></div><div class="crayon-line" id="crayon-55cc00e9b73c1833935528-19"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0018 seconds] -->
+<p>
+– Ngoài ra bạn có thể tham khảo trên trang chính của Facebook SDK để thực hiện nhiều thao <a title="Facebook API" href="https://developers.facebook.com/docs/unity/reference/current">tác khác</a> như : Post status, post link…</p>
+<p>– Dưới đây mình tổng hợp lại các hàm để các bạn có cái nhìn tổng quát:</p>
+<h2 id="core-methods">Core Methods</h2>
+<div class="_57-c">
+<table class="_4-ss _5k9x">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="u_g_2" class="_5m37">
+<tr class="row_0">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.Init"><code>FB.Init</code></a></td>
+<td>Initialize the SDK, required before doing anything else</td>
+</tr>
+<tr class="row_1 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.API"><code>FB.API</code></a></td>
+<td>Call the Facebook Graph API to find out about the user or act on his/her behalf</td>
+</tr>
+<tr class="row_2">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.Feed"><code>FB.Feed</code></a></td>
+<td>Trigger the Feed dialog for one-to-many sharing</td>
+</tr>
+<tr class="row_3 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.AppRequest"><code>FB.AppRequest</code></a></td>
+<td>Trigger the Request dialog for one-to-one sharing</td>
+</tr>
+<tr class="row_4">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.GetDeepLink"><code>FB.GetDeepLink</code></a></td>
+<td>Get the URL with which the app was invoked. <em>Versions 4.3.3 and above.</em></td>
+</tr>
+<tr class="row_5 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.GameGroupCreate"><code>FB.GameGroupCreate</code></a></td>
+<td>Prompt to create a new <a href="https://developers.facebook.com/docs/games/app-game-groups/">Game Group</a>. <em>Versions 6.0 and above.</em></td>
+</tr>
+<tr class="row_6">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.GameGroupJoin"><code>FB.GameGroupJoin</code></a></td>
+<td>Prompt to join a <a href="https://developers.facebook.com/docs/games/app-game-groups/">Game Group</a>. <em>Versions 6.0 and above.</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="auth-methods">Auth Methods</h2>
+<div class="_57-c">
+<table class="_4-ss _5k9x">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="u_g_3" class="_5m37">
+<tr class="row_0">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.Login"><code>FB.Login</code></a></td>
+<td>Ask a user to authorize your app, or to grant additional authorization</td>
+</tr>
+<tr class="row_1 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.Logout"><code>FB.Logout</code></a></td>
+<td>Log a user entirely out of Facebook</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<h2 id="aux-methods">Auxiliary Methods</h2>
+<div class="_57-c">
+<table class="_4-ss _5k9x">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="u_g_4" class="_5m37">
+<tr class="row_0">
+<td><a href="https://developers.facebook.com/docs/unity/reference/FB.Canvas.Pay"><code>FB.Canvas.Pay</code></a></td>
+<td>Prompt the user to make a payment using <a href="https://developers.facebook.com/docs/concepts/payments/">Facebook Payments</a>.<em>Desktop only.</em></td>
+</tr>
+<tr class="row_1 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.PublishInstall/"><code>FB.PublishInstall</code></a></td>
+<td>Report an install, for integrating with <a href="https://developers.facebook.com/docs/tutorials/mobile-app-ads/">Mobile Install Ads</a>. <em>Mobile only. DEPRECATED in v6.0</em></td>
+</tr>
+<tr class="row_2">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/FB.ActivateApp/"><code>FB.ActivateApp</code></a></td>
+<td>Report an install, for integrating with <a href="https://developers.facebook.com/docs/tutorials/mobile-app-ads/">Mobile Install Ads</a>. <em>Mobile only. Version 6.0 and later</em></td>
+</tr>
+<tr class="row_3 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/fb.appevents.logevent"><code>FB.AppEvents.LogEvent</code></a></td>
+<td>Publish an app event, for deeper integration with <a href="https://developers.facebook.com/docs/tutorials/mobile-app-ads/">Mobile App Install Ads</a>. <em>Mobile only, versions 4.3.3 and above.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="session-properties">Session Properties</h2>
+<div class="_57-c">
+<table class="_4-ss _5k9x">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="u_g_5" class="_5m37">
+<tr class="row_0">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/Properties#UserId"><code>FB.UserId</code></a></td>
+<td>The Facebook user ID of the currently logged in user</td>
+</tr>
+<tr class="row_1 _5m29">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/Properties#AccessToken"><code>FB.AccessToken</code></a></td>
+<td>The access token granted to your application by the current user</td>
+</tr>
+<tr class="row_2">
+<td><a href="https://developers.facebook.com/docs/unity/reference/current/Properties#IsLoggedIn"><code>FB.IsLoggedIn</code></a></td>
+<td>Check whether a user is currently logged in and has authorized your app</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ --><h3>Comments</h3><p><fb:comments-count href="http://unityviet.com/huong-dan-share-facebook-trong-unity/" fb-xfbml-state="rendered" class=""><span class="fb_comments_count">2</span></fb:comments-count> comments</p><div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid" data-href="http://unityviet.com/huong-dan-share-facebook-trong-unity/" data-num-posts="5" data-width="100%" data-colorscheme="light" fb-xfbml-state="rendered"><span style="height: 520px; width: 770px;"><iframe id="f200fc8c84" name="f1772d3e3" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/comments.html" style="border: none; overflow: hidden; height: 520px; width: 770px;"></iframe></span></div>   	</div>
+
+   </div>
+
+	</article>
+			
+		</div><!-- #content -->
+
+      
+		<ul class="default-wp-page clearfix">
+			<li class="previous"><a href="http://unityviet.com/new-ui-unity-drag-drop/" rel="prev"><span class="meta-nav">←</span> New UI in Unity: Example 1 – Drag and Drop</a></li>
+			<li class="next"><a href="http://unityviet.com/tim-hieu-ve-rigibody/" rel="next">Tìm hiểu về Rigibody <span class="meta-nav">→</span></a></li>
+		</ul>
+	
+      
+      
+      
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			One thought on “<span>Hướng dẫn Share Facebook trong Unity</span>”		</h2>
+
+		
+		<ul class="comment-list">
+				<li class="pingback even thread-even depth-1" id="comment-48">
+		<p>Pingback: <a href="http://unityviet.com/game-social-voi-share-facebook-bang-ultimate-mobile/" rel="external nofollow" class="url">Game social với share facebook bằng Ultimate Mobile - Cộng đồng Unity Việt</a> </p>
+	</li><!-- #comment-## -->
+		</ul><!-- .comment-list -->
+
+		
+	
+	
+							<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://unityviet.com/huong-dan-share-facebook-trong-unity/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://unityviet.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																			<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true" required="required"></textarea></p>						<p class="form-allowed-tags" id="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code class="" title="" data-url=""&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre class="" title="" data-url=""&gt; &lt;span class="" title="" data-url=""&gt; </code></p>
+						<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="325" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8061ebd157"></p><p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1439432943932"></form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+	</div><!-- #primary -->
+
+	
+<div id="secondary">
+			
+		<aside id="categories-2" class="widget widget_categories clearfix"><h3 class="widget-title"><span>Chuyên mục</span></h3>		<ul>
+	<li class="cat-item cat-item-37"><a href="http://unityviet.com/category/completed-project/">Completed Project</a> (13)
+<ul class="children">
+	<li class="cat-item cat-item-99"><a href="http://unityviet.com/category/completed-project/component/">Component</a> (5)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://unityviet.com/category/khac/">Khác</a> (21)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://unityviet.com/category/thu-vien/">Thư viện</a> (12)
+<ul class="children">
+	<li class="cat-item cat-item-7"><a href="http://unityviet.com/category/thu-vien/unity-ebooks/">Ebooks</a> (2)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://unityviet.com/category/thu-vien/unity-game-ui/">Game UI</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://unityviet.com/category/thu-vien/download-unity-plugin/">Plugin</a> (8)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://unityviet.com/category/unity/">Unity</a> (24)
+<ul class="children">
+	<li class="cat-item cat-item-10"><a href="http://unityviet.com/category/unity/animations-unity/">Animations</a> (3)
+</li>
+	<li class="cat-item cat-item-19"><a href="http://unityviet.com/category/unity/programing/">Programing</a> (11)
+</li>
+	<li class="cat-item cat-item-116"><a href="http://unityviet.com/category/unity/tricks/">Tricks</a> (1)
+	<ul class="children">
+	<li class="cat-item cat-item-117"><a href="http://unityviet.com/category/unity/tricks/camera/">Camera</a> (1)
+</li>
+	</ul>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://unityviet.com/category/unity/ui/">UI</a> (9)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://unityviet.com/category/unity-can-ban/">Unity Căn Bản</a> (18)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://unityviet.com/category/unity-plugin/">Unity Plugins</a> (8)
+<ul class="children">
+	<li class="cat-item cat-item-30"><a href="http://unityviet.com/category/unity-plugin/itween/">Itween</a> (3)
+</li>
+	<li class="cat-item cat-item-53"><a href="http://unityviet.com/category/unity-plugin/ultimate-mobile/">Ultimate Mobile</a> (4)
+</li>
+</ul>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud clearfix"><h3 class="widget-title"><span>Tags</span></h3><div class="tagcloud"><a href="http://unityviet.com/tag/animation/" class="tag-link-77" title="2 topics" style="font-size: 12.2pt;">animation</a>
+<a href="http://unityviet.com/tag/collider/" class="tag-link-58" title="4 topics" style="font-size: 17.333333333333pt;">collider</a>
+<a href="http://unityviet.com/tag/collision-detection/" class="tag-link-56" title="2 topics" style="font-size: 12.2pt;">Collision detection</a>
+<a href="http://unityviet.com/tag/cua-hang-item/" class="tag-link-103" title="4 topics" style="font-size: 17.333333333333pt;">cửa hàng item</a>
+<a href="http://unityviet.com/tag/cua-hang-vat-pham/" class="tag-link-104" title="4 topics" style="font-size: 17.333333333333pt;">cửa hàng vật phẩm</a>
+<a href="http://unityviet.com/tag/destructible/" class="tag-link-18" title="2 topics" style="font-size: 12.2pt;">destructible</a>
+<a href="http://unityviet.com/tag/ebook/" class="tag-link-33" title="2 topics" style="font-size: 12.2pt;">ebook</a>
+<a href="http://unityviet.com/tag/eventory-system/" class="tag-link-101" title="4 topics" style="font-size: 17.333333333333pt;">eventory system</a>
+<a href="http://unityviet.com/tag/flappy-bird-online/" class="tag-link-138" title="2 topics" style="font-size: 12.2pt;">Flappy Bird Online</a>
+<a href="http://unityviet.com/tag/framework/" class="tag-link-29" title="2 topics" style="font-size: 12.2pt;">framework</a>
+<a href="http://unityviet.com/tag/game-maketing/" class="tag-link-113" title="2 topics" style="font-size: 12.2pt;">GAme maketing</a>
+<a href="http://unityviet.com/tag/gioi-thieu-unity/" class="tag-link-26" title="1 topic" style="font-size: 8pt;">gioi thieu unity</a>
+<a href="http://unityviet.com/tag/gui/" class="tag-link-14" title="3 topics" style="font-size: 15pt;">gui</a>
+<a href="http://unityviet.com/tag/itween-2/" class="tag-link-31" title="3 topics" style="font-size: 15pt;">itween</a>
+<a href="http://unityviet.com/tag/joint/" class="tag-link-86" title="2 topics" style="font-size: 12.2pt;">Joint</a>
+<a href="http://unityviet.com/tag/maketing/" class="tag-link-111" title="2 topics" style="font-size: 12.2pt;">maketing</a>
+<a href="http://unityviet.com/tag/material/" class="tag-link-71" title="3 topics" style="font-size: 15pt;">material</a>
+<a href="http://unityviet.com/tag/networking/" class="tag-link-139" title="2 topics" style="font-size: 12.2pt;">Networking</a>
+<a href="http://unityviet.com/tag/ngui/" class="tag-link-13" title="1 topic" style="font-size: 8pt;">ngui</a>
+<a href="http://unityviet.com/tag/oncollisionenter/" class="tag-link-59" title="2 topics" style="font-size: 12.2pt;">OnCollisionEnter</a>
+<a href="http://unityviet.com/tag/pattern/" class="tag-link-21" title="1 topic" style="font-size: 8pt;">pattern</a>
+<a href="http://unityviet.com/tag/playerprefs/" class="tag-link-38" title="2 topics" style="font-size: 12.2pt;">playerprefs</a>
+<a href="http://unityviet.com/tag/playmaker/" class="tag-link-27" title="2 topics" style="font-size: 12.2pt;">playmaker</a>
+<a href="http://unityviet.com/tag/plugin/" class="tag-link-15" title="7 topics" style="font-size: 22pt;">plugin</a>
+<a href="http://unityviet.com/tag/programing-2/" class="tag-link-22" title="1 topic" style="font-size: 8pt;">programing</a>
+<a href="http://unityviet.com/tag/rigidbody/" class="tag-link-66" title="2 topics" style="font-size: 12.2pt;">rigidbody</a>
+<a href="http://unityviet.com/tag/save-game/" class="tag-link-39" title="4 topics" style="font-size: 17.333333333333pt;">save game</a>
+<a href="http://unityviet.com/tag/scripting/" class="tag-link-28" title="1 topic" style="font-size: 8pt;">scripting</a>
+<a href="http://unityviet.com/tag/shop/" class="tag-link-100" title="4 topics" style="font-size: 17.333333333333pt;">shop</a>
+<a href="http://unityviet.com/tag/singleton/" class="tag-link-20" title="1 topic" style="font-size: 8pt;">singleton</a>
+<a href="http://unityviet.com/tag/slider/" class="tag-link-16" title="5 topics" style="font-size: 19.2pt;">slider</a>
+<a href="http://unityviet.com/tag/smoothmove/" class="tag-link-32" title="1 topic" style="font-size: 8pt;">smoothmove</a>
+<a href="http://unityviet.com/tag/texture/" class="tag-link-124" title="2 topics" style="font-size: 12.2pt;">Texture</a>
+<a href="http://unityviet.com/tag/tu-hoc-unity/" class="tag-link-25" title="1 topic" style="font-size: 8pt;">tu hoc unity</a>
+<a href="http://unityviet.com/tag/ugui/" class="tag-link-43" title="3 topics" style="font-size: 15pt;">uGUI</a>
+<a href="http://unityviet.com/tag/ui-in-unity/" class="tag-link-42" title="5 topics" style="font-size: 19.2pt;">ui in unity</a>
+<a href="http://unityviet.com/tag/ultimate-mobile-2/" class="tag-link-55" title="3 topics" style="font-size: 15pt;">ultimate mobile</a>
+<a href="http://unityviet.com/tag/unirate/" class="tag-link-17" title="1 topic" style="font-size: 8pt;">unirate</a>
+<a href="http://unityviet.com/tag/unity-2/" class="tag-link-41" title="4 topics" style="font-size: 17.333333333333pt;">unity</a>
+<a href="http://unityviet.com/tag/unity-2d/" class="tag-link-34" title="2 topics" style="font-size: 12.2pt;">unity 2d</a>
+<a href="http://unityviet.com/tag/unity3d/" class="tag-link-141" title="2 topics" style="font-size: 12.2pt;">unity3d</a>
+<a href="http://unityviet.com/tag/unity-can-ban-2/" class="tag-link-24" title="3 topics" style="font-size: 15pt;">unity can ban</a>
+<a href="http://unityviet.com/tag/va-cham/" class="tag-link-57" title="2 topics" style="font-size: 12.2pt;">va chạm</a>
+<a href="http://unityviet.com/tag/xay-dung-shop/" class="tag-link-102" title="3 topics" style="font-size: 15pt;">xây dựng shop</a>
+<a href="http://unityviet.com/tag/dua-xe-3d/" class="tag-link-140" title="2 topics" style="font-size: 12.2pt;">đua xe 3d</a></div>
+</aside><aside id="text-2" class="widget widget_text clearfix"><h3 class="widget-title"><span>Facebook</span></h3>			<div class="textwidget"><iframe src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:590px;" allowtransparency="true"></iframe></div>
+		</aside>
+	</div>
+	
+
+		</div><!-- .inner-wrap -->
+	</div><!-- #main -->
+   			<footer id="colophon" class="clearfix">
+			
+			<div class="footer-socket-wrapper clearfix">
+				<div class="inner-wrap">
+					<div class="footer-socket-area">
+                  <div class="footer-socket-right-section">
+   							<div class="social-links clearfix">
+		<ul>
+		<li><a href="https://www.facebook.com/STGameVN" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="https://plus.google.com/106002565159548684327/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="https://www.youtube.com/channel/UC7yFuH5HBlDbU0VD2vywVAg" target="_blank"><i class="fa fa-youtube"></i></a></li>		</ul>
+	</div><!-- .social-links -->
+	                  </div>
+                  <div class="footer-socket-left-sectoin">
+   						<div class="copyright">Copyright © 2015 <a href="http://unityviet.com/" title="Cộng đồng Unity Việt"><span>Cộng đồng Unity Việt</span></a>. All rights reserved.<br>Theme: ColorMag by <a href="http://themegrill.com/themes/colormag" target="_blank" title="ThemeGrill" rel="designer"><span>ThemeGrill</span></a>. Powered by <a href="http://wordpress.org/" target="_blank" title="WordPress"><span>WordPress</span></a>.</div>                  </div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<a href="http://unityviet.com/huong-dan-share-facebook-trong-unity/#masthead" id="scroll-up" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- #page -->
+	<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/form.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/colormag-slider-setting.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/navigation.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/jquery.fitvids.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/fitvids-setting.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/lib.core.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/lib.view.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/client.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/client(1).js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/tag.item.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/tag.ui.js"></script>
+<script type="text/javascript" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/handler.image.js"></script>
+<script type="text/javascript" id="slb_footer">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB && SLB.has_child('View.init') ) { SLB.View.init({"ui_autofit":true,"ui_animate":true,"slideshow_autostart":true,"slideshow_duration":"6","group_loop":true,"ui_overlay_opacity":"0.8","ui_title_default":false,"theme_default":"slb_default","ui_labels":{"loading":"Loading","close":"Close","nav_next":"Next","nav_prev":"Previous","slideshow_start":"Start slideshow","slideshow_stop":"Stop slideshow","group_status":"Item %current% of %total%"}}); }
+if ( !!window.SLB && SLB.has_child('View.assets') ) { {$.extend(SLB.View.assets, {"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851582_383899431712568_1260304077_n.png":{"id":331,"_entries":[],"type":"image","source":"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851582_383899431712568_1260304077_n.png","internal":true,"sizes":{"thumbnail":{"file":"851582_383899431712568_1260304077_n-150x150.png","width":150,"height":150,"mime-type":"image\/png"},"medium":{"file":"851582_383899431712568_1260304077_n-315x166.png","width":315,"height":166,"mime-type":"image\/png"},"post-thumbnail":{"file":"851582_383899431712568_1260304077_n-70x70.png","width":70,"height":70,"mime-type":"image\/png"},"small":{"file":"851582_383899431712568_1260304077_n-140x140.png","width":140,"height":140,"mime-type":"image\/png"},"post-large":{"file":"851582_383899431712568_1260304077_n-650x350.png","width":650,"height":350,"mime-type":"image\/png"},"original":{"file":"2014\/09\/851582_383899431712568_1260304077_n.png","width":732,"height":388}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"851582_383899431712568_1260304077_n","caption":""},"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851547_634838539880675_1864677686_n.png":{"id":329,"_entries":[],"type":"image","source":"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851547_634838539880675_1864677686_n.png","internal":true,"sizes":{"thumbnail":{"file":"851547_634838539880675_1864677686_n-150x150.png","width":150,"height":150,"mime-type":"image\/png"},"medium":{"file":"851547_634838539880675_1864677686_n-315x85.png","width":315,"height":85,"mime-type":"image\/png"},"post-thumbnail":{"file":"851547_634838539880675_1864677686_n-70x70.png","width":70,"height":70,"mime-type":"image\/png"},"small":{"file":"851547_634838539880675_1864677686_n-140x140.png","width":140,"height":140,"mime-type":"image\/png"},"post-large":{"file":"851547_634838539880675_1864677686_n-650x188.png","width":650,"height":188,"mime-type":"image\/png"},"original":{"file":"2014\/09\/851547_634838539880675_1864677686_n.png","width":690,"height":188}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"851547_634838539880675_1864677686_n","caption":""},"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851560_536028096465614_339374885_n.png":{"id":330,"_entries":[],"type":"image","source":"http:\/\/unityviet.com\/wp-content\/uploads\/2014\/09\/851560_536028096465614_339374885_n.png","internal":true,"sizes":{"thumbnail":{"file":"851560_536028096465614_339374885_n-150x150.png","width":150,"height":150,"mime-type":"image\/png"},"medium":{"file":"851560_536028096465614_339374885_n-315x282.png","width":315,"height":282,"mime-type":"image\/png"},"post-thumbnail":{"file":"851560_536028096465614_339374885_n-70x70.png","width":70,"height":70,"mime-type":"image\/png"},"small":{"file":"851560_536028096465614_339374885_n-140x140.png","width":140,"height":140,"mime-type":"image\/png"},"post-large":{"file":"851560_536028096465614_339374885_n-397x350.png","width":397,"height":350,"mime-type":"image\/png"},"original":{"file":"2014\/09\/851560_536028096465614_339374885_n.png","width":397,"height":356}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"851560_536028096465614_339374885_n","caption":""}});} }
+/* THM */
+if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_baseline',{"name":"Baseline","parent":"","styles":[{"handle":"base","uri":"http:\/\/unityviet.com\/wp-content\/plugins\/simple-lightbox\/themes\/baseline\/css\/style.css","deps":[]}],"layout_raw":"<div class=\"slb_container\"><div class=\"slb_content\">{{item.content}}<div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><div class=\"slb_controls\"><span class=\"slb_close\">{{ui.close}}<\/span><span class=\"slb_slideshow\">{{ui.slideshow_control}}<\/span><\/div><div class=\"slb_loading\">{{ui.loading}}<\/div><\/div><div class=\"slb_details\"><div class=\"inner\"><div class=\"slb_data\"><div class=\"slb_data_content\"><span class=\"slb_data_title\">{{item.title}}<\/span><span class=\"slb_group_status\">{{ui.group_status}}<\/span><div class=\"slb_data_desc\">{{item.description}}<\/div><\/div><\/div><div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><\/div><\/div><\/div>"}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_default',{"name":"Default (Light)","parent":"slb_baseline","styles":[{"handle":"font","uri":"http:\/\/fonts.googleapis.com\/css?family=Yanone+Kaffeesatz","deps":[]},{"handle":"base","uri":"http:\/\/unityviet.com\/wp-content\/plugins\/simple-lightbox\/themes\/default\/css\/style.css","deps":[]}]}); }})})(jQuery);}/* ]]> */</script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/7tUlZKGPU61.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/7tUlZKGPU61(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=355966917902409&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="slb_viewer_wrap"><div id="slb_viewer_slb_default" class="slb_viewer slb_theme_slb_default slb_theme_slb_baseline item_multi" style="display: block;"><div class="slb_viewer_layout" style="display: block; top: 1179.5px;"><div class="slb_container"><div class="slb_content" style="width: 690px; height: 188px;"><span class="slb_template_tag slb_template_tag_item slb_template_tag_item_content" style="display: inline;"><img src="./Hướng dẫn Share Facebook trong Unity - Cộng đồng Unity Việt_files/851547_634838539880675_1864677686_n.png"></span><div class="slb_nav"><span class="slb_prev"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_nav_prev" style="display: block;">Previous</span></span><span class="slb_next"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_nav_next" style="display: block;">Next</span></span></div><div class="slb_controls"><span class="slb_close"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_close" style="display: block;">Close</span></span><span class="slb_slideshow"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_slideshow_control" style="display: block;">Start slideshow</span></span></div><div class="slb_loading" style="display: none;"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_loading" style="display: inline;">Loading</span></div></div><div class="slb_details"><div class="inner"><div class="slb_data"><div class="slb_data_content"><span class="slb_data_title"><span class="slb_template_tag slb_template_tag_item slb_template_tag_item_title"></span></span><span class="slb_group_status"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_group_status">Item 2 of 3</span></span><div class="slb_data_desc"><span class="slb_template_tag slb_template_tag_item slb_template_tag_item_description"></span></div></div></div><div class="slb_nav"><span class="slb_prev"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_nav_prev">Previous</span></span><span class="slb_next"><span class="slb_template_tag slb_template_tag_ui slb_template_tag_ui_nav_next">Next</span></span></div></div></div></div></div><div class="slb_viewer_overlay" style="display: block; opacity: 0.8;"></div></div></div></body></html>

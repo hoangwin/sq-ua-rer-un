@@ -71,7 +71,7 @@ public class DirectionRaycastingMeshCollider : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         //check collision on all sides
         checkCollision();

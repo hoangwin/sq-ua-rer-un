@@ -25,6 +25,14 @@ public class MainMC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+       
+           
+	}
+    void FixedUpdate()
+    {
+        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);
+       
+
         if (!isDead)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(1 * playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
@@ -38,22 +46,18 @@ public class MainMC : MonoBehaviour {
             {
                 isJumping = false;
             }
-            if(Physics2D.Raycast(WallCheck.position,Vector2.right,wallCheckDistance))
+            if (Physics2D.Raycast(WallCheck.position, Vector2.right, wallCheckDistance))
             {
                 isDead = true;
             }
-            Debug.DrawRay(WallCheck.position, Vector2.right*wallCheckDistance, Color.red);
+        //    Debug.DrawRay(WallCheck.position, Vector2.right * wallCheckDistance, Color.red);
         }
-           
-	}
-    void FixedUpdate()
-    {
-        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);
         if (isJumping && (jumpCounter < jumpTimer))
         {
             jumpCounter += Time.deltaTime;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, minJumpHeight);
-
+             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, minJumpHeight);
+            //GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, minJumpHeight * 15));
+            //isJumping = false;
         }
     }
 }

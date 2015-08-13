@@ -9,17 +9,27 @@ public class State : MonoBehaviour {
     public static State instance;
     public  GameObject panelMainmeneu;
     public  GameObject panelSelectLevel;
-    public  GameObject panelIngameMenu;
-    
-    
+    public  GameObject panelIngame;    
+    public GameObject panelGamePause;
+    public GameObject panelGameOver;
+    public GameObject panelGameConfirm;
 
-    public Image ColorPanelEffect;
-   
+    public Image ColorPanelEffect;   
 
     public static int state = 0;
     public static int STATE_MAIN_MENU = 0;
     public static int STATE_SELECT_LEVEL = 1;
     public static int STATE_GAMEPLAY = 2;
+    public static int STATE_PAUSE = 3;
+    public static int STATE_OVER = 4;
+    public static int STATE_QUIT = 5;
+
+    //text select Level
+    public Text SelectLevelNumLevel;
+    public Text SelectLevelJump;
+    public Text SelectLevelPlay;
+    public Text SelectLevelPercent;
+
 	void Start () {
         instance = this;
         
@@ -31,22 +41,58 @@ public class State : MonoBehaviour {
     {
         state = STATE_MAIN_MENU;
          //iTween.ValueTo(ColorPanelMainmeneu.color,)
-        if (true)
+        if (haveeffect)
         {
             ColorPanelEffect.gameObject.SetActive(true);
-            iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.99, "to", 0, "time", 0.5, "onupdate", "onUpdateValue"));
+            iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
         }
-        panelMainmeneu.SetActive(true);
-        panelSelectLevel.SetActive(false);
-        panelIngameMenu.SetActive(false);
-        
+        else
+        {
+            panelMainmeneu.SetActive(true);
+            panelSelectLevel.SetActive(false);
+            panelIngame.SetActive(false);
+            panelGamePause.SetActive(false);
+            panelGameOver.SetActive(false);
+            panelGameConfirm.SetActive(false);
+        }
+       
     }
-  
+
+    public void setIGM()
+    {
+        state = STATE_PAUSE;
+        Time.timeScale = 0;
+        panelMainmeneu.SetActive(false);
+        panelSelectLevel.SetActive(false);
+        panelIngame.SetActive(false);
+        panelGamePause.SetActive(true);
+        panelGameOver.SetActive(false);
+    }
+    public void setGameOver()
+    {
+        state = STATE_OVER;
+        panelMainmeneu.SetActive(false);
+        panelSelectLevel.SetActive(false);
+        panelIngame.SetActive(false);
+        panelGamePause.SetActive(false);
+        panelGameOver.SetActive(true);
+    }
+
+    public void setQuit()
+    {
+    
+        panelGameConfirm.SetActive(true);
+    }
+    public void setHideQuit()
+    {    
+        panelGameConfirm.SetActive(false);
+    }
     public void setSelectLevel()
    {
 
        state = STATE_SELECT_LEVEL;
        ColorPanelEffect.gameObject.SetActive(true);
+        initLevel(0);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
      //   iTween.ValueTo()
@@ -71,18 +117,31 @@ public class State : MonoBehaviour {
         ColorPanelEffect.color = c;
         if (i == 1)
         {
-            if (state == STATE_SELECT_LEVEL)
+            if(state == STATE_MAIN_MENU)
+            {
+                panelMainmeneu.SetActive(true);
+                panelSelectLevel.SetActive(false);
+                panelIngame.SetActive(false);
+                panelGamePause.SetActive(false);
+                panelGameOver.SetActive(false);
+                panelGameConfirm.SetActive(false);
+            }
+            else if (state == STATE_SELECT_LEVEL)
             {
                 panelMainmeneu.SetActive(false);
                 panelSelectLevel.SetActive(true);
-                panelIngameMenu.SetActive(false);
+                panelIngame.SetActive(false);
+                panelGamePause.SetActive(false);
+                panelGameOver.SetActive(false);
 
             }
             else if (state == STATE_GAMEPLAY)
             {
                 panelMainmeneu.SetActive(false);
                 panelSelectLevel.SetActive(false);
-                panelIngameMenu.SetActive(true);
+                panelIngame.SetActive(true);
+                panelGamePause.SetActive(false);
+                panelGameOver.SetActive(false);
                 TrapCollection.instance.TrapInit();
             }
                 iTween.Stop(this.gameObject);
@@ -95,6 +154,14 @@ public class State : MonoBehaviour {
             ColorPanelEffect.gameObject.SetActive(false);
 
         }
+    }
+    public void initLevel(int level)
+    {
+       SaveInfo.instance.setlevel(level);
+    SelectLevelNumLevel.text = "Level "+ (level +1).ToString() ;
+    SelectLevelJump.text = "JUMP " + SaveInfo.instance.levelCountJump.NUM.ToString() +" times";
+    SelectLevelPlay.text=  "Play " + SaveInfo.instance.levelCountPlay.NUM.ToString() +" times";
+    SelectLevelPercent.text = "percent " + SaveInfo.instance.levelCountPercent.NUM.ToString() + " %";
     }
     void FixedUpdate()
     {

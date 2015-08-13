@@ -73,7 +73,7 @@ public class DirectionRaycasting2DCollider : MonoBehaviour
 	}
 	
 	
-	void Update()
+	void FixedUpdate()
 	{
 		//check collision on all sides
 		checkCollision();
