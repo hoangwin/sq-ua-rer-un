@@ -8,6 +8,7 @@ public class TrapCollection : MonoBehaviour {
     public GameObject parent;
     public Transform[] TrapListPostion;//8 list tren man hinh
     public GameObject[] TrapListTemple;//list tong
+    public GameObject ParentList;//list tong
     int triggerCount;
     public static TrapCollection instance;
 	void Start () {
@@ -28,7 +29,7 @@ public class TrapCollection : MonoBehaviour {
         Levels.init();
         parent.transform.rotation = new Quaternion(0, 0, 180, 0);
         GameObject obj = (GameObject)Instantiate(TrapListTemple[0], TrapListPostion[0].position, TrapListPostion[0].rotation);// TrapList[0].SetActive(true);
-        obj.transform.parent = parent.transform;
+        obj.transform.parent = ParentList.transform;
     }
 	// Update is called once per frame
 	void Update () {
@@ -42,16 +43,24 @@ public class TrapCollection : MonoBehaviour {
         { 
             int i = Levels.Level[triggerCount];
             int j = triggerCount % 8;
-        //    Debug.Log(" " + i + "," + j);
+            //Debug.Log(" " + i + "," + j);
             GameObject obj = (GameObject)Instantiate(TrapListTemple[i], TrapListPostion[j].position, TrapListPostion[j].rotation);// TrapList[0].SetActive(true);
-            obj.transform.parent = parent.transform;
+            obj.transform.parent = ParentList.transform;
         }
-       
-
     }
   //  void OnCollisionEnter2D(Collision2D coll)
-   // {
-     //   Debug.Log("bbbbbb");
-
-//    }
+  // {
+  //   Debug.Log("bbbbbb");
+  //    }
+    public void destroyAll()
+    {
+        Transform[] T = ParentList.GetComponentsInChildren<Transform>();
+        foreach(Transform t in T)
+        {
+            if (t == ParentList.transform)
+                continue;
+            Destroy(t.gameObject);
+        }
+        triggerCount = 0;
+    }
 }

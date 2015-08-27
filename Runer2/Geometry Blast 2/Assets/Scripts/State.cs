@@ -12,6 +12,7 @@ public class State : MonoBehaviour {
     public  GameObject panelIngame;    
     public GameObject panelGamePause;
     public GameObject panelGameOver;
+    public GameObject panelGameWin;
     public GameObject panelGameConfirm;
 
     public Image ColorPanelEffect;   
@@ -22,7 +23,8 @@ public class State : MonoBehaviour {
     public static int STATE_GAMEPLAY = 2;
     public static int STATE_PAUSE = 3;
     public static int STATE_OVER = 4;
-    public static int STATE_QUIT = 5;
+    public static int STATE_WIN = 5;
+    public static int STATE_QUIT = 6;
 
     //text select Level
     public Text SelectLevelNumLevel;
@@ -43,6 +45,8 @@ public class State : MonoBehaviour {
          //iTween.ValueTo(ColorPanelMainmeneu.color,)
         if (haveeffect)
         {
+            TrapCollection.instance.destroyAll();
+            MainMC.isDead = false;
             ColorPanelEffect.gameObject.SetActive(true);
             iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
         }
@@ -67,6 +71,29 @@ public class State : MonoBehaviour {
         panelIngame.SetActive(false);
         panelGamePause.SetActive(true);
         panelGameOver.SetActive(false);
+    }
+    
+    public void setResume()
+    {
+        state = STATE_GAMEPLAY;        
+        panelMainmeneu.SetActive(false);
+        panelSelectLevel.SetActive(false);
+        panelIngame.SetActive(true);
+        panelGamePause.SetActive(false);
+        panelGameOver.SetActive(false);
+    }
+    public void setReplay()
+    {
+        state = STATE_GAMEPLAY;
+
+        panelMainmeneu.SetActive(false);
+        panelSelectLevel.SetActive(false);
+        panelIngame.SetActive(true);
+        panelGamePause.SetActive(false);
+        panelGameOver.SetActive(false);
+        TrapCollection.instance.destroyAll();
+        MainMC.isDead = false;
+        TrapCollection.instance.TrapInit();
     }
     public void setGameOver()
     {
@@ -98,6 +125,8 @@ public class State : MonoBehaviour {
      //   iTween.ValueTo()
        
     }
+
+
 	// Update is called once per frame
 
 

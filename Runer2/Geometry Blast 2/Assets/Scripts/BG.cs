@@ -10,6 +10,7 @@ public class BG : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(0, 0, Time.deltaTime*speedRotation);
+        if(!MainMC.isDead)
+            transform.Rotate(0, 0, Time.deltaTime*speedRotation);
 	}
 }

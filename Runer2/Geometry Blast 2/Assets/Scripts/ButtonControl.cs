@@ -7,6 +7,9 @@ public class ButtonControl : MonoBehaviour {
 	// Use this for initialization
     public Image imageSoundMusic;
     public Image imageSoundFx;
+    public Image imageSoundMusicSelectLevel;
+    public Image imageSoundFxSelectLevel;
+
     public Sprite spriteSoundMusicOn;
     public Sprite spriteSoundMusicOff;
     public Sprite spriteSoundFxOn;
@@ -26,19 +29,31 @@ public class ButtonControl : MonoBehaviour {
     public void SoundMusicButton()
     {
         SoundEngine.isSoundMusic = !SoundEngine.isSoundMusic;
-        if(SoundEngine.isSoundMusic)
+        if (SoundEngine.isSoundMusic)
+        {
             imageSoundMusic.sprite = spriteSoundMusicOn;
+            imageSoundMusicSelectLevel.sprite = spriteSoundMusicOn;
+        }
         else
+        {
             imageSoundMusic.sprite = spriteSoundMusicOff;
+            imageSoundMusicSelectLevel.sprite = spriteSoundMusicOff;
+        }
         //State.instance.setSelectLevel();
     }
     public void SoundFxButton()
     {
         SoundEngine.isSoundSFX = !SoundEngine.isSoundSFX;
         if (SoundEngine.isSoundSFX)
+        {
             imageSoundFx.sprite = spriteSoundFxOn;
+            imageSoundFxSelectLevel.sprite = spriteSoundFxOn;
+        }
         else
+        {
             imageSoundFx.sprite = spriteSoundFxOff;
+            imageSoundFxSelectLevel.sprite = spriteSoundFxOff;
+        }
         //State.instance.setSelectLevel();
     }
     public void ConfirmNoButton()
@@ -51,10 +66,10 @@ public class ButtonControl : MonoBehaviour {
     }
     public void QuitButton()
     {
-        if(State.state == State.STATE_SELECT_LEVEL)
+        if (State.state == State.STATE_SELECT_LEVEL )
             State.instance.setMainMenu(true);
         else
-        State.instance.setQuit();
+            State.instance.setQuit();
         //State.instance.setSelectLevel();
     }
     public void FBShared()
@@ -83,5 +98,20 @@ public class ButtonControl : MonoBehaviour {
     public void IGMButton()
     {
         State.instance.setIGM();
+    }
+    public void IGMGOMenuButton()
+    {
+        Time.timeScale = 1;
+        State.instance.setMainMenu(true); 
+    }
+    public void ResumeButton()
+    {
+        Time.timeScale = 1;
+        State.instance.setResume();
+    }
+    public void ReplayButton()
+    {
+        Time.timeScale = 1;
+        State.instance.setReplay();
     }
 }

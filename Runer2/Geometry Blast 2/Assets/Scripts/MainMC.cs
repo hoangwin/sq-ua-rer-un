@@ -18,7 +18,9 @@ public class MainMC : MonoBehaviour {
     public float jumpTimer;// gioi han thoi gian nhay
     public Transform WallCheck;
     public float wallCheckDistance;
-    bool isDead;
+    public static bool isDead;
+
+    
 	void Start () {
         Application.targetFrameRate = 60;
 	}
@@ -30,25 +32,33 @@ public class MainMC : MonoBehaviour {
 	}
     void FixedUpdate()
     {
-        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);
-       
+        if(State.state != State.STATE_GAMEPLAY)
+        {
+            return;
+        }
+        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);      
 
         if (!isDead)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(1 * playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
             canjump = isGround;
-            if (Input.GetKey(KeyCode.Space) && canjump)
+           // if (Input.GetKey(KeyCode.Space) && canjump)
+            if (Input.GetButton("Jump") && canjump)
+          
             {
                 isJumping = true;
                 jumpCounter = 0;
             }
-            if (!Input.GetKey(KeyCode.Space))
+            //if (!Input.GetKey(KeyCode.Space))
+            if (!Input.GetButton("Jump"))
             {
                 isJumping = false;
             }
             if (Physics2D.Raycast(WallCheck.position, Vector2.right, wallCheckDistance))
             {
                 isDead = true;
+                State.instance.setGameOver();
+                
             }
         //    Debug.DrawRay(WallCheck.position, Vector2.right * wallCheckDistance, Color.red);
         }
