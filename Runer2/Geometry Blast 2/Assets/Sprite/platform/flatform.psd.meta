@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 2aa6d0c6d09a7d040970ee930ec84127
-timeCreated: 1434793035
-licenseType: Free
+timeCreated: 1441277058
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: flatform_0
     21300002: flatform_1
     21300004: flatform_2
+    21300006: flatform_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,20 +60,20 @@ TextureImporter:
     - name: flatform_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 873
-        width: 98
-        height: 67
+        x: 71
+        y: 875
+        width: 134
+        height: 70
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: flatform_1
       rect:
         serializedVersion: 2
-        x: 291
-        y: 867
-        width: 100
-        height: 110
+        x: 278
+        y: 858
+        width: 124
+        height: 125
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -83,6 +84,16 @@ TextureImporter:
         y: 787
         width: 100
         height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: flatform_3
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 788
+        width: 126
+        height: 126
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
