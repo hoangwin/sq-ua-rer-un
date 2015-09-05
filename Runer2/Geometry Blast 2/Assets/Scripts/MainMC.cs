@@ -14,40 +14,53 @@ public class MainMC : MonoBehaviour {
     public float playerSpeed;
 
     public int minJumpHeight;    
-    float jumpCounter;
-    public float jumpTimer;// gioi han thoi gian nhay
+    float jumpTimer;
+    public float jumpTimerMAX;// gioi han thoi gian nhay
     public Transform WallCheck;
     public float wallCheckDistance;
     public static bool isDead;
     public DirectionRaycasting2DCollider directionRaycasting2DCollider;
-    
+    public ParticleSystem effectDie;
+    public ParticleSystem effectTrack;
+    public Animator animator;
+    Vector3 beginPos;
+    public static MainMC instance;
 	void Start () {
+        instance = this;
         Application.targetFrameRate = 60;
+        beginPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-       
+        AdjustJetpack( isGround);
            
 	}
+    public void initMC()
+    {
+        transform.position = new Vector3(beginPos.x, beginPos.y, beginPos.z);
+        isDead = false;
+        animator.SetInteger("State", 1);//state 0 = nanim none
+    }
     void FixedUpdate()
     {
+        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);     
         if(State.state != State.STATE_GAMEPLAY)
         {
             return;
-        }
-        isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, ground);      
+        }       
 
         if (!isDead)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(1 * playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
             canjump = isGround;
            // if (Input.GetKey(KeyCode.Space) && canjump)
-            if (Input.GetButton("Jump") && canjump) 
-          
+            if (Input.GetButton("Jump") && canjump)           
             {
+                
                 isJumping = true;
-                jumpCounter = 0;
+                jumpTimer = 0;
+                SaveInfo._currentCountJump++;
             }
             //if (!Input.GetKey(KeyCode.Space))
             if (!Input.GetButton("Jump"))
@@ -61,10 +74,10 @@ public class MainMC : MonoBehaviour {
         //    }
         //    Debug.DrawRay(WallCheck.position, Vector2.right * wallCheckDistance, Color.red);
         }
-        if (isJumping && (jumpCounter < jumpTimer))
+        if (isJumping && (jumpTimer < jumpTimerMAX))
         {
-            jumpCounter += Time.deltaTime;
-             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, minJumpHeight);
+            jumpTimer += Time.deltaTime;
+             GetComponent<Rigidbody2D>().velocity = new Vector2(0, minJumpHeight);
             //GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, minJumpHeight * 15));
             //isJumping = false;
         }
@@ -178,13 +191,47 @@ public class MainMC : MonoBehaviour {
                 }
             */
 
-            }
-            if (collider.tag.Equals("Trap"))
-            { 
+        }
+        if (isDead)
+            return;
+        if (collider.tag.Equals("Trap"))
+        {
+            if (!isDead)
+            {
                 isDead = true;
-                State.instance.setGameOver();                        
+                animator.SetInteger("State", 0);//state 0 = nanim none
+
+                SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundExplotion);
+                StartCoroutine(WaitShowGameOver(1.0F));
+                ParticleSystem bulletInstance = (ParticleSystem)(Instantiate(effectDie, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))));
+                bulletInstance.gameObject.SetActive(true);
+                //MainMenu.ShowADS();
             }
         }
+        else if (collider.tag.Equals("Finish"))
+        {
+            isDead = true;
+            animator.SetInteger("State", 2);//state 2 = ưin
+         //   GetComponent<Rigidbody2D>().isKinematic = true;
+            iTween.MoveTo(this.gameObject, iTween.Hash("x", TrapCollection.instance.tranFormFinishObject.position.x, "y", TrapCollection.instance.tranFormFinishObject.position.y, "time", 2));            
+            StartCoroutine(WaitShowGameWin(1.5F));            
+            
+        }
+    }
+    void AdjustJetpack( bool grounded)
+    {
+        effectTrack.enableEmission = grounded && !isDead;
+        //effectTrack.emissionRate = jetpackActive ? 20 : 0f;
+    }
 
-    
+    IEnumerator WaitShowGameOver(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        State.instance.setGameOver();
+    }
+    IEnumerator WaitShowGameWin(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        State.instance.setGameWin();
+    }
 }

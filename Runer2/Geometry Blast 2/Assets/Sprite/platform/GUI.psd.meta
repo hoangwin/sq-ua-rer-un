@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d79628d5521503a47a0206bc7d6dd6a5
-timeCreated: 1439363625
-licenseType: Free
+timeCreated: 1441418109
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: GUI_0
@@ -69,10 +69,10 @@ TextureImporter:
     - name: GUI_1
       rect:
         serializedVersion: 2
-        x: 105
-        y: 600
-        width: 798
-        height: 41
+        x: 103
+        y: 603
+        width: 797
+        height: 37
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

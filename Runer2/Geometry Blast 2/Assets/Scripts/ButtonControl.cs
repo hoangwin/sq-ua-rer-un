@@ -14,8 +14,10 @@ public class ButtonControl : MonoBehaviour {
     public Sprite spriteSoundMusicOff;
     public Sprite spriteSoundFxOn;
     public Sprite spriteSoundFxOff;
+
+    public static ButtonControl instance;
 	void Start () {
-	
+        instance = this;
 	}
 	
 	// Update is called once per frame
@@ -38,8 +40,9 @@ public class ButtonControl : MonoBehaviour {
         {
             imageSoundMusic.sprite = spriteSoundMusicOff;
             imageSoundMusicSelectLevel.sprite = spriteSoundMusicOff;
+            SoundEngine.instance.stopSound();
         }
-        //State.instance.setSelectLevel();
+        SoundEngine.instance.PlayLoop(SoundEngine.instance._soundBGMenu);
     }
     public void SoundFxButton()
     {
@@ -54,7 +57,7 @@ public class ButtonControl : MonoBehaviour {
             imageSoundFx.sprite = spriteSoundFxOff;
             imageSoundFxSelectLevel.sprite = spriteSoundFxOff;
         }
-        //State.instance.setSelectLevel();
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
     }
     public void ConfirmNoButton()
     {
@@ -94,6 +97,7 @@ public class ButtonControl : MonoBehaviour {
     public void PlaySelectLevelButton()
     {
         State.instance.setGamePlay();
+        SoundEngine.instance.PlayLoop(SoundEngine.instance._soundBG1);
     }
     public void IGMButton()
     {
@@ -111,6 +115,12 @@ public class ButtonControl : MonoBehaviour {
     }
     public void ReplayButton()
     {
+        Time.timeScale = 1;
+        State.instance.setReplay();
+    }
+    public void NextButton()
+    {
+        //them o day de doi sang man moi
         Time.timeScale = 1;
         State.instance.setReplay();
     }

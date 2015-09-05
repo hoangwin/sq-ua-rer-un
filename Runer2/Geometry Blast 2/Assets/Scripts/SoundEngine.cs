@@ -11,6 +11,10 @@ public class SoundEngine : MonoBehaviour {
     public AudioClip _soundClick = null;
     public AudioClip _soundExplotion = null;
     public AudioClip _soundEnd = null;
+    public AudioClip _soundBGMenu = null;
+    public AudioClip _soundBG1 = null;
+    public AudioClip _soundBG2 = null;
+    public AudioClip _soundBG3 = null;
     
     public static SoundEngine instance;
     void Start()

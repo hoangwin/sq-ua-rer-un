@@ -8,6 +8,9 @@ public class SaveInfo : MonoBehaviour {
     public SuperInt levelCountPlay;//dung cho mot level bat ki
     public SuperInt levelCountPercent;//dung cho mot level bat ki
 
+    public static  int _currentCountJump;//dung cho mot level bat ki
+   // public static  int _currentCountPlay;//dung cho mot level bat ki
+    public static int _currentCountPercent;//dung cho mot level bat ki
     public SuperInt[][] DataInfo;
     public const int MAXLEVEL = 3;
     public static SaveInfo instance;
@@ -26,6 +29,12 @@ public class SaveInfo : MonoBehaviour {
             DataInfo[i][2] = new SuperInt(0, "COUNTPERCENT" + 1 + i);
         }
     }
+    public static void resetAllTempVarial()
+    {
+         _currentCountJump = 0;//dung cho mot level bat ki
+       //  _currentCountPlay = 0;//dung cho mot level bat ki
+         _currentCountPercent = 0;
+    }
     void loadAll()
     {
         init();
@@ -42,10 +51,16 @@ public class SaveInfo : MonoBehaviour {
         levelCountJump =  DataInfo[level][0];//
         levelCountPlay=  DataInfo[level][1];//
         levelCountPercent = DataInfo[level][2];
-    }
+    }    
 
-    public void Savelevel()
+    public void Savelevel(int addjump, int percent,int addCOuntPlay)
     {
+
+        levelCountJump.NUM += addjump;
+        levelCountPlay.NUM += addCOuntPlay;
+        if (levelCountPercent.NUM < addCOuntPlay)
+            levelCountPercent.NUM = addCOuntPlay;
+
         levelCountJump.Save();//
         levelCountPlay.Save();//
         levelCountPercent.Save();

@@ -14,39 +14,46 @@ public class State : MonoBehaviour {
     public GameObject panelGameOver;
     public GameObject panelGameWin;
     public GameObject panelGameConfirm;
+    Vector3 posGameOver;
+    Vector3 posGameWin;
+    public Slider slider;
 
     public Image ColorPanelEffect;   
 
     public static int state = 0;
-    public static int STATE_MAIN_MENU = 0;
-    public static int STATE_SELECT_LEVEL = 1;
-    public static int STATE_GAMEPLAY = 2;
-    public static int STATE_PAUSE = 3;
-    public static int STATE_OVER = 4;
-    public static int STATE_WIN = 5;
-    public static int STATE_QUIT = 6;
+    public const int STATE_MAIN_MENU = 0;
+    public const int STATE_SELECT_LEVEL = 1;
+    public const int STATE_GAMEPLAY = 2;
+    public const int STATE_PAUSE = 3;
+    public const int STATE_OVER = 4;
+    public const int STATE_WIN = 5;
+    public const int STATE_QUIT = 6;
 
     //text select Level
     public Text SelectLevelNumLevel;
     public Text SelectLevelJump;
     public Text SelectLevelPlay;
     public Text SelectLevelPercent;
-
+    public float indexValueWhenTranformEffect;
+   public static float percentCompleted;
 	void Start () {
         instance = this;
-        
+        indexValueWhenTranformEffect = 0;
         setMainMenu(false);
+        posGameOver = new Vector3(panelGameOver.transform.position.x, panelGameOver.transform.position.y, panelGameOver.transform.position.z);
+        posGameWin = new Vector3(panelGameWin.transform.position.x, panelGameWin.transform.position.y, panelGameWin.transform.position.z);
         
 	}
 
     public void setMainMenu(bool haveeffect)
     {
         state = STATE_MAIN_MENU;
+
          //iTween.ValueTo(ColorPanelMainmeneu.color,)
         if (haveeffect)
         {
             TrapCollection.instance.destroyAll();
-            MainMC.isDead = false;
+            MainMC.instance.initMC();
             ColorPanelEffect.gameObject.SetActive(true);
             iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
         }
@@ -58,8 +65,9 @@ public class State : MonoBehaviour {
             panelGamePause.SetActive(false);
             panelGameOver.SetActive(false);
             panelGameConfirm.SetActive(false);
+            panelGameWin.SetActive(false);            
         }
-       
+     
     }
 
     public void setIGM()
@@ -82,29 +90,33 @@ public class State : MonoBehaviour {
         panelGamePause.SetActive(false);
         panelGameOver.SetActive(false);
     }
-    public void setReplay()
-    {
-        state = STATE_GAMEPLAY;
-
-        panelMainmeneu.SetActive(false);
-        panelSelectLevel.SetActive(false);
-        panelIngame.SetActive(true);
-        panelGamePause.SetActive(false);
-        panelGameOver.SetActive(false);
-        TrapCollection.instance.destroyAll();
-        MainMC.isDead = false;
-        TrapCollection.instance.TrapInit();
-    }
+ 
     public void setGameOver()
     {
         state = STATE_OVER;
+        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, (int)(percentCompleted * 100), 1);
+        panelMainmeneu.SetActive(false);
+        panelSelectLevel.SetActive(false);
+        panelIngame.SetActive(false);
+        panelGamePause.SetActive(false);       
+        panelGameOver.SetActive(true);
+        panelGameOver.transform.position = new Vector3(posGameOver.x, posGameOver.y, posGameOver.z);
+        iTween.MoveFrom(panelGameOver, iTween.Hash("y", -5, "time", 1));
+    }
+    public void setGameWin()
+    {   
+        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, 1,1);
+        MainMC.instance.animator.SetInteger("State", 0);//state 0 = nanim none
+        state = STATE_WIN;
         panelMainmeneu.SetActive(false);
         panelSelectLevel.SetActive(false);
         panelIngame.SetActive(false);
         panelGamePause.SetActive(false);
-        panelGameOver.SetActive(true);
+        panelGameOver.SetActive(false);
+        panelGameWin.SetActive(true);
+        panelGameWin.transform.position = new Vector3(posGameOver.x, posGameOver.y, posGameOver.z);
+        iTween.MoveFrom(panelGameWin, iTween.Hash("y", -5, "time", 1));
     }
-
     public void setQuit()
     {
     
@@ -119,7 +131,7 @@ public class State : MonoBehaviour {
 
        state = STATE_SELECT_LEVEL;
        ColorPanelEffect.gameObject.SetActive(true);
-        initLevel(0);
+       initLevelInFoSelectLevel(0);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
      //   iTween.ValueTo()
@@ -140,10 +152,27 @@ public class State : MonoBehaviour {
         //   iTween.ValueTo()
 
     }
+    public void setReplay()
+    {
+        state = STATE_GAMEPLAY;
+        ColorPanelEffect.gameObject.SetActive(true);
+        iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
+        //state = STATE_GAMEPLAY;
+        //panelMainmeneu.SetActive(false);
+        //panelSelectLevel.SetActive(false);
+        //panelIngame.SetActive(true);
+        //panelGamePause.SetActive(false);
+        //panelGameOver.SetActive(false);
+        //panelGameWin.SetActive(false);
+        
+      //  TrapCollection.instance.TrapInit();
+
+    }
     void onUpdateValue(float i)
     {
         Color c = new Color(ColorPanelEffect.color.r, ColorPanelEffect.color.g, ColorPanelEffect.color.b, i);
         ColorPanelEffect.color = c;
+        indexValueWhenTranformEffect = i;
         if (i == 1)
         {
             if(state == STATE_MAIN_MENU)
@@ -154,6 +183,7 @@ public class State : MonoBehaviour {
                 panelGamePause.SetActive(false);
                 panelGameOver.SetActive(false);
                 panelGameConfirm.SetActive(false);
+                panelGameWin.SetActive(false);
             }
             else if (state == STATE_SELECT_LEVEL)
             {
@@ -171,7 +201,13 @@ public class State : MonoBehaviour {
                 panelIngame.SetActive(true);
                 panelGamePause.SetActive(false);
                 panelGameOver.SetActive(false);
-                TrapCollection.instance.TrapInit();
+                panelGameWin.SetActive(false);
+                SaveInfo.resetAllTempVarial();
+                TrapCollection.instance.destroyAll();
+                TrapCollection.instance.TrapInit();       
+         
+                MainMC.instance.initMC();
+                BG.angleRotation = 0;
             }
                 iTween.Stop(this.gameObject);
                 iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.99, "to", 0, "time", 0.5, "onupdate", "onUpdateValue"));
@@ -184,17 +220,80 @@ public class State : MonoBehaviour {
 
         }
     }
-    public void initLevel(int level)
+    public void initLevelInFoSelectLevel(int level)
     {
-       SaveInfo.instance.setlevel(level);
-    SelectLevelNumLevel.text = "Level "+ (level +1).ToString() ;
-    SelectLevelJump.text = "JUMP " + SaveInfo.instance.levelCountJump.NUM.ToString() +" times";
-    SelectLevelPlay.text=  "Play " + SaveInfo.instance.levelCountPlay.NUM.ToString() +" times";
-    SelectLevelPercent.text = "percent " + SaveInfo.instance.levelCountPercent.NUM.ToString() + " %";
+        SaveInfo.instance.setlevel(level);
+        SelectLevelNumLevel.text = "Level "+ (level +1).ToString() ;
+        SelectLevelJump.text = "JUMP " + SaveInfo.instance.levelCountJump.NUM.ToString() +" times";
+        SelectLevelPlay.text=  "Play " + SaveInfo.instance.levelCountPlay.NUM.ToString() +" times";
+        SelectLevelPercent.text = "percent " + SaveInfo.instance.levelCountPercent.NUM.ToString() + " %";
     }
     void FixedUpdate()
     {
         timer += Time.deltaTime;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (indexValueWhenTranformEffect != 0 && indexValueWhenTranformEffect != 1)
+                return;
+            switch(state)
+            {
+                case STATE_MAIN_MENU:
+                    if (panelGameConfirm.activeSelf)
+                        State.instance.setHideQuit();
+                     else 
+                        State.instance.setQuit();
+                    break;
+                case STATE_SELECT_LEVEL:
+                        State.instance.setMainMenu(true);
+                    break;
+                case STATE_GAMEPLAY:
+                    State.instance.setIGM();
+                    break;
+                case STATE_PAUSE:
+                    ButtonControl.instance.ResumeButton();;
+                    break;
+                case STATE_OVER:
+                    ButtonControl.instance.IGMGOMenuButton();
+                    break;
+                case STATE_WIN :
+                    ButtonControl.instance.IGMGOMenuButton();
+                    break;
+                case STATE_QUIT: 
+                    break;
+            }
+           // Application.Quit();
+        }
+        switch (state)
+        {
+            case STATE_MAIN_MENU:
+             
+                break;
+            case STATE_SELECT_LEVEL:
+              
+                break;
+            case STATE_GAMEPLAY:
+                updatePercent();
+                break;
+            case STATE_PAUSE:
+              
+                break;
+            case STATE_OVER:
+             
+                break;
+            case STATE_WIN:
+              
+                break;
+            case STATE_QUIT:
+                break;
+        }
+    }
+    void updatePercent()
+    {        
+        percentCompleted = BG.angleRotation / Levels.maxAngle;
+        slider.value = percentCompleted;
     }
     // Update is called once per frame
   

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3e23c01b474f20a4f93f3653e9e97870
-timeCreated: 1439443241
+timeCreated: 1441295924
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: GUIText_1
     21300004: GUIText_2
     21300006: GUIText_3
+    21300008: GUIText_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -84,6 +85,26 @@ TextureImporter:
         y: 325
         width: 460
         height: 181
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GUIText_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 297
+        height: 252
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GUIText_4
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 5
+        width: 297
+        height: 254
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
