@@ -52,23 +52,25 @@ public class TrapCollection : MonoBehaviour {
                     triggerCount++;
                     int i = Levels.Level[triggerCount];
                     int j = triggerCount % 8;
-                   // Debug.Log(" " + i + "," + j);
+                 //   Debug.Log("---- " + i + "," + j);
                     GameObject obj;
                     if (i == 100)//-1 LA O TRONG
                     {
+                       // Debug.Log("|||||||" + i + "," + j);
                         obj = (GameObject)Instantiate(ObjectFinish, TrapListPostion[j].position, TrapListPostion[j].rotation);// TrapList[0].SetActive(true);    TrapEmpty
                         obj.transform.parent = ParentList.transform;
                         tranFormFinishObject = obj.transform;// new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
                     }
                     else if (i != -1)//-1 LA O TRONG
                     {
-                          
+                       // Debug.Log("=====" + i + "," + j);
                          obj = (GameObject)Instantiate(TrapListTemple[i], TrapListPostion[j].position, TrapListPostion[j].rotation);// TrapList[0].SetActive(true);
                          obj.transform.parent = ParentList.transform;
                         
                     }
                     else
                     {
+                      //  Debug.Log("+++++" + i + "," + j);
                         obj = (GameObject)Instantiate(TrapEmpty, TrapListPostion[j].position, TrapListPostion[j].rotation);// TrapList[0].SetActive(true);    TrapEmpty
                         obj.transform.parent = ParentList.transform;
                     }

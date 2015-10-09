@@ -15,6 +15,7 @@ public class SaveInfo : MonoBehaviour {
     public const int MAXLEVEL = 3;
     public static SaveInfo instance;
 	void Start () {
+        //PlayerPrefs.DeleteAll();
         loadAll();      
         instance = this;
 	}
@@ -58,9 +59,10 @@ public class SaveInfo : MonoBehaviour {
 
         levelCountJump.NUM += addjump;
         levelCountPlay.NUM += addCOuntPlay;
-        if (levelCountPercent.NUM < addCOuntPlay)
-            levelCountPercent.NUM = addCOuntPlay;
-
+        if (levelCountPercent.NUM < percent)
+            levelCountPercent.NUM = percent;
+        if (levelCountPercent.NUM >= 100)
+            levelCountPercent.NUM = 100;
         levelCountJump.Save();//
         levelCountPlay.Save();//
         levelCountPercent.Save();

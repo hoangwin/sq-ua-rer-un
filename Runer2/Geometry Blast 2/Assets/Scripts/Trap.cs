@@ -6,13 +6,21 @@ public class Trap : MonoBehaviour {
 	// Use this for initialization
     public bool isHaveNextTrap;
     public bool isSub;
+    public int type;//=0//=1:rotation
+    public float speedRotation;    
 	void Start () {
         isHaveNextTrap = false;
 	}
-	
+    public Transform targetRotation;
 	// Update is called once per frame
 	void Update () {
-	
+        if (type == 1)
+        {
+
+            transform.Rotate(Vector3.forward * Time.deltaTime * speedRotation);
+             //   transform.RotateAround(targetRotation.position, Vector3.back, speedRotation * Time.deltaTime);
+          
+        }
 	}
     void OnTriggerEnter2D(Collider2D other)
     {

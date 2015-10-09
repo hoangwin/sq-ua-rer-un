@@ -1,13 +1,14 @@
 fileFormatVersion: 2
 guid: 2aa6d0c6d09a7d040970ee930ec84127
-timeCreated: 1441277058
-licenseType: Pro
+timeCreated: 1443754647
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: flatform_0
     21300002: flatform_1
     21300004: flatform_2
     21300006: flatform_3
+    21300008: flatform_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,6 +42,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -55,6 +57,7 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -3
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites:
     - name: flatform_0
@@ -94,6 +97,16 @@ TextureImporter:
         y: 788
         width: 126
         height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: flatform_4
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 624
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

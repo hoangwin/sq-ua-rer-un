@@ -55,12 +55,15 @@ public class MainMC : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = new Vector2(1 * playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
             canjump = isGround;
            // if (Input.GetKey(KeyCode.Space) && canjump)
-            if (Input.GetButton("Jump") && canjump)           
+            if (Input.GetButton("Jump") && canjump)
             {
+                if (!isJumping)
+                {
+                    jumpTimer = 0;
+                    SaveInfo._currentCountJump++;
+                    isJumping = true;
+                }
                 
-                isJumping = true;
-                jumpTimer = 0;
-                SaveInfo._currentCountJump++;
             }
             //if (!Input.GetKey(KeyCode.Space))
             if (!Input.GetButton("Jump"))
@@ -80,6 +83,10 @@ public class MainMC : MonoBehaviour {
              GetComponent<Rigidbody2D>().velocity = new Vector2(0, minJumpHeight);
             //GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, minJumpHeight * 15));
             //isJumping = false;
+        }
+        else  if (isJumping && (jumpTimer >= jumpTimerMAX))
+        {
+            isJumping = false;
         }
     }
 

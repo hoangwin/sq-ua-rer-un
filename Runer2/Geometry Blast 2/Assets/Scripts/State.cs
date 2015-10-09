@@ -93,8 +93,9 @@ public class State : MonoBehaviour {
  
     public void setGameOver()
     {
+      
         state = STATE_OVER;
-        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, (int)(percentCompleted * 100), 1);
+        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, (int)(percentCompleted * 100)-1, 1);
         panelMainmeneu.SetActive(false);
         panelSelectLevel.SetActive(false);
         panelIngame.SetActive(false);
@@ -102,6 +103,7 @@ public class State : MonoBehaviour {
         panelGameOver.SetActive(true);
         panelGameOver.transform.position = new Vector3(posGameOver.x, posGameOver.y, posGameOver.z);
         iTween.MoveFrom(panelGameOver, iTween.Hash("y", -5, "time", 1));
+        ShowADS();
     }
     public void setGameWin()
     {   
@@ -128,10 +130,10 @@ public class State : MonoBehaviour {
     }
     public void setSelectLevel()
    {
-
+       Levels.mLevel = 0;
        state = STATE_SELECT_LEVEL;
        ColorPanelEffect.gameObject.SetActive(true);
-       initLevelInFoSelectLevel(0);
+       initLevelInFoSelectLevel(Levels.mLevel);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
      //   iTween.ValueTo()
@@ -234,6 +236,8 @@ public class State : MonoBehaviour {
     }
     void Update()
     {
+        timeShowAds += Time.deltaTime; 
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (indexValueWhenTranformEffect != 0 && indexValueWhenTranformEffect != 1)
@@ -296,5 +300,30 @@ public class State : MonoBehaviour {
         slider.value = percentCompleted;
     }
     // Update is called once per frame
-  
+    public static bool firstShowAdsAtBegin = false;
+    static public float timeShowAds = 0;
+    public static void ShowADS()
+    {
+       // Debug.Log("Ads");
+        if (timeShowAds > 90 || !firstShowAdsAtBegin)
+        {
+          //  Debug.Log("Ads1");
+            if (!firstShowAdsAtBegin)
+                firstShowAdsAtBegin = true;
+            timeShowAds = 0;
+#if UNITY_ANDROID
+            using (AndroidJavaClass jc = new AndroidJavaClass("com.geometry.blast.UnityPlayerNativeActivity"))
+            {
+                jc.CallStatic<int>("ShowAds");
+            }
+
+#elif UNITY_WP8
+
+            WP8Statics.ShowAds("");
+#elif UNITY_IOS
+            IOsStatic.ShowAds(" ", " ");
+#endif
+        }
+    }
+
 }

@@ -124,4 +124,20 @@ public class ButtonControl : MonoBehaviour {
         Time.timeScale = 1;
         State.instance.setReplay();
     }
+
+    public void SelectLevelLeft()
+    {
+      Levels.mLevel--;
+      if (Levels.mLevel < 0)
+          Levels.mLevel = 2;
+      State.instance.initLevelInFoSelectLevel(Levels.mLevel);
+    }
+    public void SelectLevelRight()
+    {
+
+        Levels.mLevel++;
+        if (Levels.mLevel >2)
+            Levels.mLevel = 0;
+        State.instance.initLevelInFoSelectLevel(Levels.mLevel);
+    }
 }
