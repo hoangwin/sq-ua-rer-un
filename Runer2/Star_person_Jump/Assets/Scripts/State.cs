@@ -7,8 +7,6 @@ public class State : MonoBehaviour {
 	// Use this for initialization
     public static float timer;
     public static State instance;
-    public  GameObject panelMainmeneu;
-    public  GameObject panelSelectLevel;
     public  GameObject panelIngame;    
     public GameObject panelGamePause;
     public GameObject panelGameOver;
@@ -18,64 +16,39 @@ public class State : MonoBehaviour {
     Vector3 posGameWin;
     public Slider slider;
 
-    public Image ColorPanelEffect;   
+    public Image ColorPanelEffect;
 
-    public static int state = 0;
-    public const int STATE_MAIN_MENU = 0;
-    public const int STATE_SELECT_LEVEL = 1;
+    public GameObject[] m_Background;
+    public Color[] m_ColorCircle;
+    public Material m_MaterialCircle;
+    public static int state;
     public const int STATE_GAMEPLAY = 2;
     public const int STATE_PAUSE = 3;
     public const int STATE_OVER = 4;
     public const int STATE_WIN = 5;
     public const int STATE_QUIT = 6;
-
-    //text select Level
-    public Text SelectLevelNumLevel;
-    public Text SelectLevelJump;
-    public Text SelectLevelPlay;
-    public Text SelectLevelPercent;
+    
     public float indexValueWhenTranformEffect;
    public static float percentCompleted;
+    
 	void Start () {
         instance = this;
         indexValueWhenTranformEffect = 0;
-        setMainMenu(false);
+        
+        
         posGameOver = new Vector3(panelGameOver.transform.position.x, panelGameOver.transform.position.y, panelGameOver.transform.position.z);
         posGameWin = new Vector3(panelGameWin.transform.position.x, panelGameWin.transform.position.y, panelGameWin.transform.position.z);
-        
-	}
-
-    public void setMainMenu(bool haveeffect)
-    {
-        state = STATE_MAIN_MENU;
-
-         //iTween.ValueTo(ColorPanelMainmeneu.color,)
-        if (haveeffect)
-        {
-            TrapCollection.instance.destroyAll();
-            MainMC.instance.initMC();
-            ColorPanelEffect.gameObject.SetActive(true);
-            iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
-        }
-        else
-        {
-            panelMainmeneu.SetActive(true);
-            panelSelectLevel.SetActive(false);
-            panelIngame.SetActive(false);
-            panelGamePause.SetActive(false);
-            panelGameOver.SetActive(false);
-            panelGameConfirm.SetActive(false);
-            panelGameWin.SetActive(false);            
-        }
-     
+        State.instance.setGamePlay();
+        setColorLevel();
     }
+  
+  
 
     public void setIGM()
     {
         state = STATE_PAUSE;
         Time.timeScale = 0;
-        panelMainmeneu.SetActive(false);
-        panelSelectLevel.SetActive(false);
+      
         panelIngame.SetActive(false);
         panelGamePause.SetActive(true);
         panelGameOver.SetActive(false);
@@ -84,8 +57,7 @@ public class State : MonoBehaviour {
     public void setResume()
     {
         state = STATE_GAMEPLAY;        
-        panelMainmeneu.SetActive(false);
-        panelSelectLevel.SetActive(false);
+
         panelIngame.SetActive(true);
         panelGamePause.SetActive(false);
         panelGameOver.SetActive(false);
@@ -96,8 +68,6 @@ public class State : MonoBehaviour {
       
         state = STATE_OVER;
         SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, (int)(percentCompleted * 100)-1, 1);
-        panelMainmeneu.SetActive(false);
-        panelSelectLevel.SetActive(false);
         panelIngame.SetActive(false);
         panelGamePause.SetActive(false);       
         panelGameOver.SetActive(true);
@@ -110,8 +80,6 @@ public class State : MonoBehaviour {
         SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, 1,1);
         MainMC.instance.animator.SetInteger("State", 0);//state 0 = nanim none
         state = STATE_WIN;
-        panelMainmeneu.SetActive(false);
-        panelSelectLevel.SetActive(false);
         panelIngame.SetActive(false);
         panelGamePause.SetActive(false);
         panelGameOver.SetActive(false);
@@ -128,32 +96,22 @@ public class State : MonoBehaviour {
     {    
         panelGameConfirm.SetActive(false);
     }
-    public void setSelectLevel()
-   {
-       Levels.mLevel = 0;
-       state = STATE_SELECT_LEVEL;
-       ColorPanelEffect.gameObject.SetActive(true);
-       initLevelInFoSelectLevel(Levels.mLevel);
-        iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
-       // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
-     //   iTween.ValueTo()
-       
-    }
 
 
 	// Update is called once per frame
 
 
-    public void setGamePlay()
+  
+	 public void setGamePlay()
     {
-
+      
         state = STATE_GAMEPLAY;
+      
         ColorPanelEffect.gameObject.SetActive(true);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
-        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
-        //   iTween.ValueTo()
 
     }
+	
     public void setReplay()
     {
         state = STATE_GAMEPLAY;
@@ -165,41 +123,23 @@ public class State : MonoBehaviour {
         //panelIngame.SetActive(true);
         //panelGamePause.SetActive(false);
         //panelGameOver.SetActive(false);
-        //panelGameWin.SetActive(false);
-        
-      //  TrapCollection.instance.TrapInit();
+        //panelGameWin.SetActive(false);        
+       // TrapCollection.instance.TrapInit();
 
     }
     void onUpdateValue(float i)
     {
-        Color c = new Color(ColorPanelEffect.color.r, ColorPanelEffect.color.g, ColorPanelEffect.color.b, i);
-        ColorPanelEffect.color = c;
+        if (state != STATE_GAMEPLAY)
+        {
+            Color c = new Color(ColorPanelEffect.color.r, ColorPanelEffect.color.g, ColorPanelEffect.color.b, i);
+
+            ColorPanelEffect.color = c;
+        }
         indexValueWhenTranformEffect = i;
         if (i == 1)
         {
-            if(state == STATE_MAIN_MENU)
+            if (state == STATE_GAMEPLAY)
             {
-                panelMainmeneu.SetActive(true);
-                panelSelectLevel.SetActive(false);
-                panelIngame.SetActive(false);
-                panelGamePause.SetActive(false);
-                panelGameOver.SetActive(false);
-                panelGameConfirm.SetActive(false);
-                panelGameWin.SetActive(false);
-            }
-            else if (state == STATE_SELECT_LEVEL)
-            {
-                panelMainmeneu.SetActive(false);
-                panelSelectLevel.SetActive(true);
-                panelIngame.SetActive(false);
-                panelGamePause.SetActive(false);
-                panelGameOver.SetActive(false);
-
-            }
-            else if (state == STATE_GAMEPLAY)
-            {
-                panelMainmeneu.SetActive(false);
-                panelSelectLevel.SetActive(false);
                 panelIngame.SetActive(true);
                 panelGamePause.SetActive(false);
                 panelGameOver.SetActive(false);
@@ -210,6 +150,13 @@ public class State : MonoBehaviour {
          
                 MainMC.instance.initMC();
                 BG.angleRotation = 0;
+                
+                if ( Levels.mLevel == 0)
+                SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG1);
+                else if (Levels.mLevel == 1)
+                    SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG2);
+                else
+                    SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG3);
             }
                 iTween.Stop(this.gameObject);
                 iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.99, "to", 0, "time", 0.5, "onupdate", "onUpdateValue"));
@@ -222,13 +169,30 @@ public class State : MonoBehaviour {
 
         }
     }
-    public void initLevelInFoSelectLevel(int level)
+
+    public void setColorLevel()
     {
-        SaveInfo.instance.setlevel(level);
-        SelectLevelNumLevel.text = "Level "+ (level +1).ToString() ;
-        SelectLevelJump.text = "JUMP " + SaveInfo.instance.levelCountJump.NUM.ToString() +" times";
-        SelectLevelPlay.text=  "Play " + SaveInfo.instance.levelCountPlay.NUM.ToString() +" times";
-        SelectLevelPercent.text = "percent " + SaveInfo.instance.levelCountPercent.NUM.ToString() + " %";
+        if (Levels.mLevel == 0)
+        {
+            m_Background[0].SetActive(true);
+            m_Background[1].SetActive(false);
+            m_Background[2].SetActive(false);
+            m_MaterialCircle.color = m_ColorCircle[0];
+        }
+        else if (Levels.mLevel == 1)
+        {
+            m_Background[0].SetActive(false);
+            m_Background[1].SetActive(true);
+            m_Background[2].SetActive(false);
+            m_MaterialCircle.color = m_ColorCircle[1];
+        }
+        else
+        {
+            m_Background[0].SetActive(false);
+            m_Background[1].SetActive(false);
+            m_Background[2].SetActive(true);
+            m_MaterialCircle.color = m_ColorCircle[2];
+        }
     }
     void FixedUpdate()
     {
@@ -244,15 +208,7 @@ public class State : MonoBehaviour {
                 return;
             switch(state)
             {
-                case STATE_MAIN_MENU:
-                    if (panelGameConfirm.activeSelf)
-                        State.instance.setHideQuit();
-                     else 
-                        State.instance.setQuit();
-                    break;
-                case STATE_SELECT_LEVEL:
-                        State.instance.setMainMenu(true);
-                    break;
+               
                 case STATE_GAMEPLAY:
                     State.instance.setIGM();
                     break;
@@ -272,12 +228,7 @@ public class State : MonoBehaviour {
         }
         switch (state)
         {
-            case STATE_MAIN_MENU:
-             
-                break;
-            case STATE_SELECT_LEVEL:
-              
-                break;
+          
             case STATE_GAMEPLAY:
                 updatePercent();
                 break;

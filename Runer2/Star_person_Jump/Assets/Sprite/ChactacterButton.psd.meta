@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 500c7829c5a1f7644af142071d022e2e
+timeCreated: 1459042428
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ChactacterButton_0
+    21300002: ChactacterButton_1
+    21300004: ChactacterButton_2
+    21300006: ChactacterButton_3
+    21300008: ChactacterButton_4
+    21300010: ChactacterButton_5
+    21300012: ChactacterButton_6
+    21300014: ChactacterButton_7
+    21300016: ChactacterButton_8
+    21300018: ChactacterButton_9
+    21300020: ChactacterButton_10
+    21300022: ChactacterButton_11
+    21300024: ChactacterButton_12
+    21300026: ChactacterButton_13
+    21300028: ChactacterButton_14
+    21300030: ChactacterButton_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ChactacterButton_0
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 851
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 846
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_2
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 843
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_3
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 838
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 834
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_5
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 830
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 679
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_7
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 672
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_8
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 672
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_9
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 669
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_10
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 662
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 507
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_12
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 509
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    - name: ChactacterButton_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 510
+        width: 113
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.5, y: 56}
+        - {x: -56.5, y: -56}
+        - {x: 56.5, y: -56}
+        - {x: 56.5, y: 56}
+    - name: ChactacterButton_14
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 505
+        width: 113
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.5, y: 56}
+        - {x: -56.5, y: -56}
+        - {x: 56.5, y: -56}
+        - {x: 56.5, y: 56}
+    - name: ChactacterButton_15
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 513
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 56}
+        - {x: -56, y: -56}
+        - {x: 56, y: -56}
+        - {x: 56, y: 56}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,9 +4,9 @@ using System.Collections;
 public class SaveInfo : MonoBehaviour {
 
 	// Use this for initialization
-    public SuperInt levelCountJump;//dung cho mot level bat ki
-    public SuperInt levelCountPlay;//dung cho mot level bat ki
-    public SuperInt levelCountPercent;//dung cho mot level bat ki
+    public static SuperInt levelCountJump;//dung cho mot level bat ki
+    public static SuperInt levelCountPlay;//dung cho mot level bat ki
+    public static SuperInt levelCountPercent;//dung cho mot level bat ki
 
     public static  int _currentCountJump;//dung cho mot level bat ki
    // public static  int _currentCountPlay;//dung cho mot level bat ki
@@ -56,6 +56,11 @@ public class SaveInfo : MonoBehaviour {
 
     public void Savelevel(int addjump, int percent,int addCOuntPlay)
     {
+        if(levelCountJump == null)
+        {
+            loadAll();
+            return;
+        }
 
         levelCountJump.NUM += addjump;
         levelCountPlay.NUM += addCOuntPlay;

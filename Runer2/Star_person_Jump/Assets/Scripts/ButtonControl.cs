@@ -26,7 +26,7 @@ public class ButtonControl : MonoBehaviour {
 	}
     public void PlayMainMenuButton()
     {
-        State.instance.setSelectLevel();
+        StateMainmenu.instance.setSelectLevel();
     }
     public void SoundMusicButton()
     {
@@ -61,7 +61,7 @@ public class ButtonControl : MonoBehaviour {
     }
     public void ConfirmNoButton()
     {
-        State.instance.setHideQuit();
+        StateMainmenu.instance.setHideQuit();
     }
     public void ConfirmYesButton()
     {
@@ -69,10 +69,10 @@ public class ButtonControl : MonoBehaviour {
     }
     public void QuitButton()
     {
-        if (State.state == State.STATE_SELECT_LEVEL )
-            State.instance.setMainMenu(true);
+        if (StateMainmenu.state == StateMainmenu.STATE_SELECT_LEVEL || StateMainmenu.state == StateMainmenu.STATE_SELECTMC)
+            StateMainmenu.instance.setMainMenu(true);
         else
-            State.instance.setQuit();
+            StateMainmenu.instance.setQuit();
         //State.instance.setSelectLevel();
     }
     public void FBShared()
@@ -96,8 +96,18 @@ public class ButtonControl : MonoBehaviour {
 
     public void PlaySelectLevelButton()
     {
-        State.instance.setGamePlay();
-        SoundEngine.instance.PlayLoop(SoundEngine.instance._soundBG1);
+        StateMainmenu.instance.LoadGamePlay();
+     //   SoundEngine.instance.PlayLoop(SoundEngine.instance._soundBG1);
+    }
+    public void ChooseMCCharacterButton()
+    {
+
+        StateMainmenu.state = StateMainmenu.STATE_SELECTMC;
+        StateMainmenu.instance.ColorPanelEffect.gameObject.SetActive(true);
+        iTween.ValueTo(StateMainmenu.instance.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
+        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
+        //   iTween.ValueTo()
+
     }
     public void IGMButton()
     {
@@ -106,7 +116,8 @@ public class ButtonControl : MonoBehaviour {
     public void IGMGOMenuButton()
     {
         Time.timeScale = 1;
-        State.instance.setMainMenu(true); 
+        //  State.instance.setMainMenu(true); //here
+        Application.LoadLevel("Menu");
     }
     public void ResumeButton()
     {
@@ -130,7 +141,7 @@ public class ButtonControl : MonoBehaviour {
       Levels.mLevel--;
       if (Levels.mLevel < 0)
           Levels.mLevel = 2;
-      State.instance.initLevelInFoSelectLevel(Levels.mLevel);
+        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.mLevel);
     }
     public void SelectLevelRight()
     {
@@ -138,6 +149,6 @@ public class ButtonControl : MonoBehaviour {
         Levels.mLevel++;
         if (Levels.mLevel >2)
             Levels.mLevel = 0;
-        State.instance.initLevelInFoSelectLevel(Levels.mLevel);
+        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.mLevel);
     }
 }
