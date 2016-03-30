@@ -31,7 +31,7 @@ public class TrapCollection : MonoBehaviour {
     {
         Levels.init();
         parent.transform.rotation = new Quaternion(0, 0, 180, 0);
-        GameObject obj = (GameObject)Instantiate(TrapListTemple[0], TrapListPostion[0].position, TrapListPostion[0].rotation);// TrapList[0].SetActive(true);
+        GameObject obj = (GameObject)Instantiate(TrapListTemple[0], TrapListPostion[7].position, TrapListPostion[7].rotation);// TrapList[0].SetActive(true);
         obj.transform.parent = ParentList.transform;
     }
 	// Update is called once per frame
@@ -46,11 +46,11 @@ public class TrapCollection : MonoBehaviour {
             Trap trap = other.GetComponent<Trap>();
             if (!trap.isHaveNextTrap)
             {
-                if (triggerCount < Levels.Level.Length-1)
+                if (triggerCount < Levels.m_LevelArray.Length)
                 {
                     trap.isHaveNextTrap = true;
-                    triggerCount++;
-                    int i = Levels.Level[triggerCount];
+                   
+                    int i = Levels.m_LevelArray[triggerCount];
                     int j = triggerCount % 8;
                  //   Debug.Log("---- " + i + "," + j);
                     GameObject obj;
@@ -74,7 +74,7 @@ public class TrapCollection : MonoBehaviour {
                         obj = (GameObject)Instantiate(TrapEmpty, TrapListPostion[j].position, TrapListPostion[j].rotation);// TrapList[0].SetActive(true);    TrapEmpty
                         obj.transform.parent = ParentList.transform;
                     }
-                  
+                   triggerCount++;
                 }
             }
         }
@@ -93,6 +93,6 @@ public class TrapCollection : MonoBehaviour {
             Destroy(t.gameObject);
         }
         triggerCount = 0;
-        MainMC.instance.animator.SetInteger("State", 1);//state 1 = nanim run
+        MainMC.instance.animator.Play("RUN");
     }
 }

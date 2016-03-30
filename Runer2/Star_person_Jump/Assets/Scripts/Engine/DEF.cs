@@ -121,7 +121,7 @@ public class DEF
 	public static void ScaleAnchorGui()
 	{
 		//chu y dung cho tung loai man hing va anh nen// mac dinh la 800x1280
-		GameObject mobject = GameObject.Find("Anchor");
+		//GameObject mobject = GameObject.Find("Anchor");
 		//float s1 = DISPLAY_WIDTH/DISPLAY_HEIGHT;
 		//float s2 = 800f/1280f;
 		//mobject.transform.localScale = new Vector3 (1-(s2-s1), 1,1);

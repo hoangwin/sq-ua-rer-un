@@ -16,6 +16,7 @@ public class OneButton : MonoBehaviour {
 	}
     public void ButtonCharacterPress()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         SelectCharacter.m_instance.setMaterial(m_index);
     }
 }

@@ -428,6 +428,8 @@ ModelImporter:
     4300196: char_Mesh_Layer_Arm_R
     7400000: Default Take
     7400002: char_ArmatureAction
+    7400004: char_ArmatureAction_001
+    7400006: char_ArmatureAction_002
     9500000: //RootNode
     13700000: char_Armor_Chain_Body_ArmL
     13700002: char_Armor_Chain_Body_ArmR

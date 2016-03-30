@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -26,6 +27,7 @@ public class ButtonControl : MonoBehaviour {
 	}
     public void PlayMainMenuButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         StateMainmenu.instance.setSelectLevel();
     }
     public void SoundMusicButton()
@@ -61,6 +63,7 @@ public class ButtonControl : MonoBehaviour {
     }
     public void ConfirmNoButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         StateMainmenu.instance.setHideQuit();
     }
     public void ConfirmYesButton()
@@ -96,6 +99,7 @@ public class ButtonControl : MonoBehaviour {
 
     public void PlaySelectLevelButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         StateMainmenu.instance.LoadGamePlay();
      //   SoundEngine.instance.PlayLoop(SoundEngine.instance._soundBG1);
     }
@@ -109,46 +113,61 @@ public class ButtonControl : MonoBehaviour {
         //   iTween.ValueTo()
 
     }
+
     public void IGMButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         State.instance.setIGM();
     }
+
     public void IGMGOMenuButton()
     {
         Time.timeScale = 1;
         //  State.instance.setMainMenu(true); //here
-        Application.LoadLevel("Menu");
+        //Application.LoadLevel("Menu");
+        SceneManager.LoadScene("Menu");
     }
+
     public void ResumeButton()
     {
         Time.timeScale = 1;
         State.instance.setResume();
     }
+
     public void ReplayButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         Time.timeScale = 1;
         State.instance.setReplay();
     }
+
     public void NextButton()
     {
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
         //them o day de doi sang man moi
         Time.timeScale = 1;
+        Levels.m_LevelIndex++;
+        if (Levels.m_LevelIndex >= Levels.m_MaxLevel)
+            Levels.m_LevelIndex = 0;
+        State.instance.setColorLevel();
         State.instance.setReplay();
     }
 
     public void SelectLevelLeft()
     {
-      Levels.mLevel--;
-      if (Levels.mLevel < 0)
-          Levels.mLevel = 2;
-        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.mLevel);
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
+        Levels.m_LevelIndex--;
+      if (Levels.m_LevelIndex < 0)
+          Levels.m_LevelIndex = 2;
+        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.m_LevelIndex);
     }
+
     public void SelectLevelRight()
     {
-
-        Levels.mLevel++;
-        if (Levels.mLevel >2)
-            Levels.mLevel = 0;
-        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.mLevel);
+        SoundEngine.instance.PlayOneShot(SoundEngine.instance._soundClick);
+        Levels.m_LevelIndex++;
+        if (Levels.m_LevelIndex >2)
+            Levels.m_LevelIndex = 0;
+        StateMainmenu.instance.initLevelInFoSelectLevel(Levels.m_LevelIndex);
     }
 }

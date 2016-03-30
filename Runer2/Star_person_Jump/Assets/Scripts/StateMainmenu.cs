@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StateMainmenu : MonoBehaviour {
@@ -80,10 +81,10 @@ public class StateMainmenu : MonoBehaviour {
     }
     public void setSelectLevel()
    {
-       Levels.mLevel = 0;
+       Levels.m_LevelIndex = 0;
        state = STATE_SELECT_LEVEL;
        ColorPanelEffect.gameObject.SetActive(true);
-       initLevelInFoSelectLevel(Levels.mLevel);
+       initLevelInFoSelectLevel(Levels.m_LevelIndex);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
        // iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("train"), "time", 50));
      //   iTween.ValueTo()
@@ -204,10 +205,7 @@ public class StateMainmenu : MonoBehaviour {
             case STATE_MAIN_MENU:
              
                 break;
-            case STATE_SELECT_LEVEL:
-              
-                break;
-           
+            case STATE_SELECT_LEVEL:             
               
                 break;
             case STATE_QUIT:
@@ -217,7 +215,8 @@ public class StateMainmenu : MonoBehaviour {
     public void LoadGamePlay()
     {  
         Debug.Log("State :" + state);
-        Application.LoadLevel("Gameplay");
+//        Application.LoadLevel("Gameplay");
+        SceneManager.LoadScene("Gameplay");
 
         //ColorPanelEffect.gameObject.SetActive(true);
         //iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
@@ -237,7 +236,7 @@ public class StateMainmenu : MonoBehaviour {
                 firstShowAdsAtBegin = true;
             timeShowAds = 0;
 #if UNITY_ANDROID
-            using (AndroidJavaClass jc = new AndroidJavaClass("com.geometry.blast.UnityPlayerNativeActivity"))
+            using (AndroidJavaClass jc = new AndroidJavaClass("com.runners.no.one.UnityPlayerNativeActivity"))
             {
                 jc.CallStatic<int>("ShowAds");
             }

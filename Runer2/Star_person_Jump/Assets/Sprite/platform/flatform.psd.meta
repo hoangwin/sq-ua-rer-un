@@ -22,7 +22,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -31,8 +31,8 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -47,7 +47,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -68,8 +68,13 @@ TextureImporter:
         width: 134
         height: 70
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 35}
+        - {x: -67, y: -35}
+        - {x: 67, y: -35}
+        - {x: 67, y: 35}
     - name: flatform_1
       rect:
         serializedVersion: 2
@@ -78,8 +83,21 @@ TextureImporter:
         width: 124
         height: 125
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62, y: -62.5}
+        - {x: 62, y: -62.5}
+        - {x: 62, y: -40.5}
+        - {x: 24, y: 62.5}
+        - {x: -15, y: 62.5}
+        - {x: -62, y: -4.5}
+      - - {x: -37, y: 11.5}
+        - {x: -35, y: 9.5}
+        - {x: -32, y: 10.5}
+        - {x: -32, y: 13.5}
+        - {x: -34, y: 15.5}
+        - {x: -37, y: 14.5}
     - name: flatform_2
       rect:
         serializedVersion: 2
@@ -88,8 +106,15 @@ TextureImporter:
         width: 100
         height: 200
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 100}
+        - {x: -50, y: 15}
+        - {x: -50, y: -100}
+        - {x: 50, y: -100}
+        - {x: 50, y: 11}
+        - {x: 6, y: 100}
     - name: flatform_3
       rect:
         serializedVersion: 2
@@ -98,8 +123,13 @@ TextureImporter:
         width: 126
         height: 126
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 63}
+        - {x: -63, y: -63}
+        - {x: 63, y: -63}
+        - {x: 63, y: 63}
     - name: flatform_4
       rect:
         serializedVersion: 2
@@ -108,8 +138,20 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 60}
+        - {x: -30, y: 57}
+        - {x: -58, y: 43}
+        - {x: -60, y: 31}
+        - {x: -60, y: -36}
+        - {x: -34, y: -60}
+        - {x: 34, y: -60}
+        - {x: 60, y: -36}
+        - {x: 60, y: 40}
+        - {x: 51, y: 60}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

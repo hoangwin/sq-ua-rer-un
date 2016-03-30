@@ -77,15 +77,15 @@ public class State : MonoBehaviour {
     }
     public void setGameWin()
     {   
-        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, 1,1);
-        MainMC.instance.animator.SetInteger("State", 0);//state 0 = nanim none
+        SaveInfo.instance.Savelevel(SaveInfo._currentCountJump, 100,1);
+      //  MainMC.instance.animator.SetInteger("State", 0);//state 0 = nanim none
         state = STATE_WIN;
         panelIngame.SetActive(false);
         panelGamePause.SetActive(false);
         panelGameOver.SetActive(false);
         panelGameWin.SetActive(true);
         panelGameWin.transform.position = new Vector3(posGameOver.x, posGameOver.y, posGameOver.z);
-        iTween.MoveFrom(panelGameWin, iTween.Hash("y", -5, "time", 1));
+       iTween.MoveFrom(panelGameWin, iTween.Hash("y", -5, "time", 1));
     }
     public void setQuit()
     {
@@ -104,7 +104,7 @@ public class State : MonoBehaviour {
   
 	 public void setGamePlay()
     {
-      
+        
         state = STATE_GAMEPLAY;
       
         ColorPanelEffect.gameObject.SetActive(true);
@@ -114,6 +114,7 @@ public class State : MonoBehaviour {
 	
     public void setReplay()
     {
+        
         state = STATE_GAMEPLAY;
         ColorPanelEffect.gameObject.SetActive(true);
         iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.01, "to", 1, "time", 0.5, "onupdate", "onUpdateValue"));
@@ -151,12 +152,13 @@ public class State : MonoBehaviour {
                 MainMC.instance.initMC();
                 BG.angleRotation = 0;
                 
-                if ( Levels.mLevel == 0)
+                if ( Levels.m_LevelIndex == 0)
                 SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG1);
-                else if (Levels.mLevel == 1)
+                else if (Levels.m_LevelIndex == 1)
                     SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG2);
                 else
                     SoundEngine.instance.PlayLoop(SoundEngine.getInstance()._soundBG3);
+                
             }
                 iTween.Stop(this.gameObject);
                 iTween.ValueTo(this.gameObject, iTween.Hash("from", 0.99, "to", 0, "time", 0.5, "onupdate", "onUpdateValue"));
@@ -172,14 +174,14 @@ public class State : MonoBehaviour {
 
     public void setColorLevel()
     {
-        if (Levels.mLevel == 0)
+        if (Levels.m_LevelIndex == 0)
         {
             m_Background[0].SetActive(true);
             m_Background[1].SetActive(false);
             m_Background[2].SetActive(false);
             m_MaterialCircle.color = m_ColorCircle[0];
         }
-        else if (Levels.mLevel == 1)
+        else if (Levels.m_LevelIndex == 1)
         {
             m_Background[0].SetActive(false);
             m_Background[1].SetActive(true);
@@ -246,9 +248,18 @@ public class State : MonoBehaviour {
         }
     }
     void updatePercent()
-    {        
-        percentCompleted = BG.angleRotation / Levels.maxAngle;
+    {
+        if(BG.angleRotation>45)
+
+        {
+            percentCompleted = (BG.angleRotation - 45) / Levels.maxAngle;
         slider.value = percentCompleted;
+        }
+        else
+        {
+            slider.value = 0.01f;
+        }
+        //Debug.Log("percentCompleted :" + percentCompleted);
     }
     // Update is called once per frame
     public static bool firstShowAdsAtBegin = false;

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c11ac0f2174496b4f8957821c402e0cd
-timeCreated: 1458956669
+timeCreated: 1459222203
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -29,8 +29,8 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 2048
+  textureFormat: -3
+  maxTextureSize: 1024
   textureSettings:
     filterMode: 0
     aniso: 16
@@ -96,36 +96,34 @@ TextureImporter:
     - name: Title_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 788
-        width: 643
-        height: 22
+        x: 209
+        y: 738
+        width: 603
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -307.5, y: 36}
-        - {x: -307.5, y: 11}
-        - {x: -102.5, y: 11}
-        - {x: -102.5, y: 36}
-      - - {x: 42.5, y: 36}
-        - {x: -92.5, y: 36}
-        - {x: -92.5, y: 11}
-        - {x: 44.5, y: 11}
-        - {x: 44.5, y: 33}
-      - - {x: 176.5, y: 37}
-        - {x: 55.5, y: 37}
-        - {x: 55.5, y: 21}
-        - {x: 58.5, y: 12}
-        - {x: 177.5, y: 12}
-        - {x: 177.5, y: 35}
-      - - {x: 338.5, y: 37}
-        - {x: 191.5, y: 37}
-        - {x: 188.5, y: 33}
-        - {x: 188.5, y: 15}
-        - {x: 192.5, y: 12}
-        - {x: 339.5, y: 12}
-        - {x: 339.5, y: 34}
+      - - {x: -301.5, y: 20.5}
+        - {x: -301.5, y: -20.5}
+        - {x: -111.5, y: -20.5}
+        - {x: -111.5, y: 20.5}
+      - - {x: 26.5, y: 20.5}
+        - {x: -100.5, y: 20.5}
+        - {x: -101.5, y: 19.5}
+        - {x: -101.5, y: -20.5}
+        - {x: 26.5, y: -20.5}
+      - - {x: 36.5, y: 20.5}
+        - {x: 36.5, y: -10.5}
+        - {x: 38.5, y: -20.5}
+        - {x: 151.5, y: -20.5}
+        - {x: 151.5, y: 20.5}
+      - - {x: 163.5, y: 20.5}
+        - {x: 161.5, y: 17.5}
+        - {x: 161.5, y: -18.5}
+        - {x: 163.5, y: -20.5}
+        - {x: 301.5, y: -20.5}
+        - {x: 301.5, y: 20.5}
     - name: Title_2
       rect:
         serializedVersion: 2
