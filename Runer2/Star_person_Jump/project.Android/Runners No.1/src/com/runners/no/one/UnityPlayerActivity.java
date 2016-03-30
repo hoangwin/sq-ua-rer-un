@@ -115,7 +115,7 @@ public class UnityPlayerActivity extends Activity
 						.addTestDevice("090021134d2dc35fe0e3dceb8b361de1");
 
 				interstitialFaceBook = new com.facebook.ads.InterstitialAd(
-						instance, "1258383310844054_1258384147510637");
+						instance, "988127824608415_988128671274997");
 
 				interstitialFaceBook
 						.setAdListener(new com.facebook.ads.InterstitialAdListener() {
@@ -160,7 +160,7 @@ public void ShowAdmobFull()// goi tu ben unity sang
 			@Override
 			public void run() {							
 				interstitialAdmob = new InterstitialAd(instance);
-				interstitialAdmob.setAdUnitId("ca-app-pub-7413680112188055/6276403325");
+				interstitialAdmob.setAdUnitId("ca-app-pub-7413680112188055/5050128120");
 				// Create ad request.
 				AdRequest adRequest = new AdRequest.Builder().build();
 				// Begin loading your interstitial.
